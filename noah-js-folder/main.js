@@ -174,41 +174,13 @@ function toggleFullscreen() {
         return;
     const frame = activeTab.frame;
     const enteringFullscreen = !getFullscreenElementCompat();
-    if (typeof gtag !== 'undefined') {
-        gtag('event', enteringFullscreen ? 'fullscreen_enter' : 'fullscreen_exit', {
-            'event_category': 'game_interaction',
-            'event_label': activeTab.title,
-            'value': 1
-        });
-    }
+    NoahShared.trackGameEvent(enteringFullscreen ? 'fullscreen_enter' : 'fullscreen_exit', activeTab.title);
     if (enteringFullscreen) {
-        if (frame.requestFullscreen) {
-            frame.requestFullscreen();
-        }
-        else if (frame.webkitRequestFullscreen) {
-            frame.webkitRequestFullscreen();
-        }
-        else if (frame.msRequestFullscreen) {
-            frame.msRequestFullscreen();
-        }
-        else if (frame.mozRequestFullScreen) {
-            frame.mozRequestFullScreen();
-        }
+        NoahShared.requestFullscreen(frame);
         frame.classList.add('fullscreen');
     }
     else {
-        if (document.exitFullscreen) {
-            document.exitFullscreen();
-        }
-        else if (document.webkitExitFullscreen) {
-            document.webkitExitFullscreen();
-        }
-        else if (document.msExitFullscreen) {
-            document.msExitFullscreen();
-        }
-        else if (document.mozCancelFullScreen) {
-            document.mozCancelFullScreen();
-        }
+        NoahShared.exitFullscreen();
         frame.classList.remove('fullscreen');
     }
 }
@@ -221,13 +193,7 @@ async function downloadCurrentGame() {
     const sourceUrl = activeTab.url || (games.find(game => game.title === title) || {}).url;
     const currentUrl = frame.src;
     const currentSrcDoc = frame.srcdoc;
-    if (typeof gtag !== 'undefined') {
-        gtag('event', 'download_attempt', {
-            'event_category': 'game_interaction',
-            'event_label': title,
-            'value': 1
-        });
-    }
+    NoahShared.trackGameEvent('download_attempt', title);
     try {
         let content = '';
         const fetchContent = async (url) => {
@@ -272,23 +238,11 @@ async function downloadCurrentGame() {
         setTimeout(() => {
             URL.revokeObjectURL(downloadUrl);
         }, 100);
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'download_success', {
-                'event_category': 'game_interaction',
-                'event_label': title,
-                'value': 1
-            });
-        }
+        NoahShared.trackGameEvent('download_success', title);
     }
     catch (error) {
         console.error('Download error:', error);
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'download_error', {
-                'event_category': 'game_interaction',
-                'event_label': title,
-                'value': 1
-            });
-        }
+        NoahShared.trackGameEvent('download_error', title);
         alert('Unable to download this game. Try another one or use the main site to download.');
     }
 }
@@ -384,7 +338,7 @@ function getRandomGame() {
     return pool[Math.floor(Math.random() * pool.length)] || games[Math.floor(Math.random() * games.length)];
 }
 function setSiteLogos(src) {
-    document.querySelectorAll('.logo, .home-logo').forEach(logoEl => {
+    NoahShared.forEachSiteLogo(logoEl => {
         logoEl.dataset.baseSrc = src;
         logoEl.src = src;
     });
@@ -580,7 +534,7 @@ function initCursorHover() {
     });
 }
 window.pageLoadTime = Date.now();
-window.matrixColor = '#c27c15';
+window.matrixColor = NoahShared.SITE_ASSETS.DEFAULT_ACCENT_COLOR;
 const canvas = document.getElementById('matrix-bg');
 const ctx = canvas ? canvas.getContext('2d') : null;
 const pathsLayer = document.getElementById('paths-layer');
@@ -620,12 +574,12 @@ function getThemePrimaryColor() {
         .getPropertyValue('--primary-orange')
         .trim();
     if (!cssColor)
-        return '#c27c15';
+        return NoahShared.SITE_ASSETS.DEFAULT_ACCENT_COLOR;
     if (cssColor.startsWith('#'))
         return cssColor;
     const parsedRgb = rgbStringToObject(cssColor);
     if (!parsedRgb)
-        return '#c27c15';
+        return NoahShared.SITE_ASSETS.DEFAULT_ACCENT_COLOR;
     return `#${[parsedRgb.r, parsedRgb.g, parsedRgb.b]
         .map(v => Math.max(0, Math.min(255, v)).toString(16).padStart(2, '0'))
         .join('')}`;
@@ -1033,7 +987,7 @@ function applyBackgroundStyle(style, shouldPersist = true) {
     const nextStyle = normalizeBackgroundStyle(style);
     backgroundState.active = nextStyle;
     if (shouldPersist) {
-        localStorage.setItem('selectedBackground', nextStyle);
+        NoahShared.writeSetting('selectedBackground', nextStyle);
     }
     updateBackgroundSelectionUI();
     syncBackgroundGlow();
@@ -1071,13 +1025,7 @@ function applyBackgroundStyle(style, shouldPersist = true) {
 }
 window.setBackgroundStyle = function (style) {
     applyBackgroundStyle(style, true);
-    if (typeof gtag !== 'undefined') {
-        gtag('event', 'background_change', {
-            'event_category': 'settings',
-            'event_label': normalizeBackgroundStyle(style),
-            'value': 1
-        });
-    }
+    NoahShared.trackSettingsEvent('background_change', normalizeBackgroundStyle(style));
 };
 document.addEventListener('mousemove', (event) => {
     backgroundState.constellation.mouseX = event.clientX;
@@ -1106,11 +1054,7 @@ window.addEventListener('resize', () => {
     }, 120);
 });
 function getFullscreenElementCompat() {
-    return document.fullscreenElement ||
-        document.webkitFullscreenElement ||
-        document.mozFullScreenElement ||
-        document.msFullscreenElement ||
-        null;
+    return NoahShared.getFullscreenElement();
 }
 const CHAT_PROTO_BINDINGS = [
     {
@@ -1163,34 +1107,10 @@ function ensureNativeCursorState() {
     document.body.classList.add('cursor-disabled');
 }
 function requestElementFullscreen(element) {
-    if (!element)
-        return;
-    if (element.requestFullscreen) {
-        element.requestFullscreen();
-    }
-    else if (element.webkitRequestFullscreen) {
-        element.webkitRequestFullscreen();
-    }
-    else if (element.msRequestFullscreen) {
-        element.msRequestFullscreen();
-    }
-    else if (element.mozRequestFullScreen) {
-        element.mozRequestFullScreen();
-    }
+    NoahShared.requestFullscreen(element);
 }
 function exitFullscreenCompat() {
-    if (document.exitFullscreen) {
-        document.exitFullscreen();
-    }
-    else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen();
-    }
-    else if (document.msExitFullscreen) {
-        document.msExitFullscreen();
-    }
-    else if (document.mozCancelFullScreen) {
-        document.mozCancelFullScreen();
-    }
+    NoahShared.exitFullscreen();
 }
 function syncChatShellFullscreenButton() {
     const shell = document.getElementById('chatAppShell');
@@ -1274,7 +1194,7 @@ window.addEventListener('beforeunload', () => {
 });
 resizeBackgroundCanvas();
 syncBackgroundGlow();
-applyBackgroundStyle(localStorage.getItem('selectedBackground') || 'matrix', false);
+applyBackgroundStyle(NoahShared.readSetting('selectedBackground'), false);
 let currentSortMethod = 'default';
 let originalGamesOrder = [...games];
 let isSorterOpen = false;
@@ -1324,13 +1244,11 @@ function applySorting() {
     setTimeout(() => {
         initFadeObserver();
     }, 50);
-    if (typeof gtag !== 'undefined') {
-        gtag('event', 'game_sort', {
-            'event_category': 'engagement',
-            'event_label': currentSortMethod,
-            'value': sortedGames.length
-        });
-    }
+    NoahShared.trackEvent('game_sort', {
+        'event_category': 'engagement',
+        'event_label': currentSortMethod,
+        'value': sortedGames.length
+    });
 }
 document.addEventListener('DOMContentLoaded', function () {
     const sortSelect = document.getElementById('sortSelect');
@@ -1471,7 +1389,7 @@ function switchTab(tab) {
         backgroundRoot.style.background = activeTab === 'chat' ? '#060709' : '';
     }
     if (activeTab !== 'chat') {
-        setCursorStyle(localStorage.getItem('cursorStyle') || 'ring');
+        setCursorStyle(NoahShared.readSetting('cursorStyle'));
         if (chatShell) {
             chatShell.classList.remove('is-fullscreen-fallback');
         }
@@ -2348,8 +2266,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 3000);
 });
 const schoolSubjects = ["Math", "Science", "English", "History", "Biology", "Chemistry", "Physics", "Calculus", "Algebra", "Geometry", "Literature", "Spanish", "French", "Art", "Music", "Computer Science", "Economics", "Psychology", "Statistics"];
-const activeIcon = "https://raw.githubusercontent.com/NoahsAmazingTutoringHelp/Noahs-Calculus-Tutor/master/cuh.png";
-const inactiveIcon = "https://raw.githubusercontent.com/NoahsAmazingTutoringHelp/Noahs-Calculus-Tutor/master/images/fruh.png";
+const activeIcon = NoahShared.SITE_ASSETS.DEFAULT_FAVICON;
+const inactiveIcon = NoahShared.SITE_ASSETS.DEFAULT_INACTIVE_FAVICON;
 let currentSubject = getRandomSubject();
 function getRandomSubject() {
     return schoolSubjects[Math.floor(Math.random() * schoolSubjects.length)];
@@ -2386,15 +2304,15 @@ function initializeFaviconAndTitle() {
 }
 document.addEventListener('visibilitychange', function () {
     if (document.hidden) {
-        const inactiveTitle = localStorage.getItem('inactiveTabTitle') || 'Home';
-        const inactiveFavicon = localStorage.getItem('inactiveTabFavicon') || 'https://raw.githubusercontent.com/NoahsAmazingTutoringHelp/Noahs-Calculus-Tutor/master/images/fruh.png';
+        const inactiveTitle = NoahShared.readSetting('inactiveTabTitle');
+        const inactiveFavicon = NoahShared.readSetting('inactiveTabFavicon');
         document.title = inactiveTitle;
         setFavicon(inactiveFavicon);
     }
     else {
         currentSubject = getRandomSubject();
         document.title = `Noahs Tutoring | ${currentSubject}`;
-        setFavicon('https://raw.githubusercontent.com/NoahsAmazingTutoringHelp/Noahs-Calculus-Tutor/master/cuh.png');
+        setFavicon(NoahShared.SITE_ASSETS.DEFAULT_FAVICON);
     }
 });
 setInterval(function () {
@@ -2529,7 +2447,7 @@ window.addEventListener('beforeunload', (event) => {
 let cursorEnabled = true;
 let cursorStyle = 'ring';
 const themeColors = {
-    'default': '#c27c15',
+    'default': NoahShared.SITE_ASSETS.DEFAULT_ACCENT_COLOR,
     'theme-rainbow': '#ff0080',
     'theme-cyber-green': '#00ff00',
     'theme-ice-blue': '#00ccff',
@@ -2578,64 +2496,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-function initializeSettings() {
-    const savedCursorStyle = localStorage.getItem('cursorStyle');
-    const savedCursorEnabled = localStorage.getItem('cursorEnabled');
-    const initialCursorStyle = savedCursorStyle || (savedCursorEnabled === 'false' ? 'default' : 'ring');
-    setCursorStyle(initialCursorStyle);
-    const cursorStyleSelect = document.getElementById('cursorStyleSelect');
-    if (cursorStyleSelect)
-        cursorStyleSelect.value = initialCursorStyle;
-    const savedTheme = localStorage.getItem('selectedTheme') || 'default';
-    const savedCustomColor = localStorage.getItem('customThemeColor');
-    if (savedCustomColor && savedTheme === 'custom') {
-        document.getElementById('customHexInput').value = savedCustomColor;
-        document.getElementById('colorPreview').style.background = savedCustomColor;
-    }
-    const savedTitle = localStorage.getItem('inactiveTabTitle');
-    const savedFavicon = localStorage.getItem('inactiveTabFavicon');
-    if (savedTitle)
-        document.getElementById('customTitle').value = savedTitle;
-    if (savedFavicon)
-        document.getElementById('customFavicon').value = savedFavicon;
-    const savedLogo = localStorage.getItem('customLogo');
-    if (savedLogo) {
-        const logoPreview = document.getElementById('logoPreview');
-        if (logoPreview) {
-            const previewImg = logoPreview.querySelector('img');
-            if (previewImg) {
-                previewImg.src = savedLogo;
-                previewImg.style.display = 'block';
-                logoPreview.querySelector('i').style.display = 'none';
-            }
-        }
-        setSiteLogos(savedLogo);
-    }
-    document.addEventListener('visibilitychange', function () {
-        if (document.hidden) {
-            const inactiveTitle = localStorage.getItem('inactiveTabTitle') || 'Home';
-            const inactiveFavicon = localStorage.getItem('inactiveTabFavicon') || 'https://raw.githubusercontent.com/NoahsAmazingTutoringHelp/Noahs-Calculus-Tutor/master/images/fruh.png';
-            document.title = inactiveTitle;
-            setFavicon(inactiveFavicon);
-        }
-        else {
-            currentSubject = getRandomSubject();
-            document.title = `Noahs Tutoring | ${currentSubject}`;
-            setFavicon('https://raw.githubusercontent.com/NoahsAmazingTutoringHelp/Noahs-Calculus-Tutor/master/cuh.png');
-        }
-    });
-    setTimeout(updateCursorColors, 100);
-}
 function openSettings() {
     switchTab('settings');
-    const savedTheme = localStorage.getItem('selectedTheme') || 'default';
-    document.querySelectorAll('.theme-option').forEach(option => {
-        option.classList.remove('active');
-    });
-    const activeOption = document.querySelector(`.theme-option[data-theme="${savedTheme}"]`);
-    if (activeOption) {
-        activeOption.classList.add('active');
-    }
+    const savedTheme = NoahShared.readSetting('selectedTheme');
+    NoahShared.setActiveThemeOption(savedTheme);
     applySavedTheme(savedTheme);
     const customColorInput = document.getElementById('customColorInput');
     if (savedTheme === 'custom') {
@@ -2648,12 +2512,12 @@ function openSettings() {
 }
 function applySavedTheme(themeName) {
     const body = document.body;
-    body.classList.remove('theme-rainbow', 'theme-cyber-green', 'theme-ice-blue', 'theme-solarized', 'theme-purple-haze');
+    NoahShared.resetThemeClasses(body);
     if (themeName !== 'default' && themeName !== 'custom') {
         body.classList.add(`theme-${themeName}`);
     }
     if (themeName === 'custom') {
-        const customColor = localStorage.getItem('customThemeColor') || '#c27c15';
+        const customColor = NoahShared.readSetting('customThemeColor');
         applyCustomThemeColors(customColor);
         document.getElementById('customColorInput').style.display = 'flex';
     }
@@ -2663,7 +2527,7 @@ function applySavedTheme(themeName) {
         document.documentElement.style.removeProperty('--accent-orange');
         document.getElementById('customColorInput').style.display = 'none';
     }
-    const savedBackground = normalizeBackgroundStyle(localStorage.getItem('selectedBackground') || 'matrix');
+    const savedBackground = normalizeBackgroundStyle(NoahShared.readSetting('selectedBackground'));
     applyBackgroundStyle(savedBackground, false);
     updateMatrixTheme();
     updateCursorColors();
@@ -2673,12 +2537,12 @@ function closeSettings() {
 }
 function selectPresetTheme(themeName) {
     const body = document.body;
-    body.classList.remove('theme-rainbow', 'theme-cyber-green', 'theme-ice-blue', 'theme-solarized', 'theme-purple-haze');
+    NoahShared.resetThemeClasses(body);
     if (themeName !== 'default' && themeName !== 'custom') {
         body.classList.add(`theme-${themeName}`);
     }
     if (themeName === 'custom') {
-        const customColor = localStorage.getItem('customThemeColor') || '#c27c15';
+        const customColor = NoahShared.readSetting('customThemeColor');
         applyCustomThemeColors(customColor);
         document.getElementById('customColorInput').style.display = 'flex';
     }
@@ -2688,36 +2552,25 @@ function selectPresetTheme(themeName) {
         document.documentElement.style.removeProperty('--accent-orange');
         document.getElementById('customColorInput').style.display = 'none';
     }
-    localStorage.setItem('selectedTheme', themeName);
+    NoahShared.writeSetting('selectedTheme', themeName);
     logoTintCache.clear();
-    document.querySelectorAll('.theme-option').forEach(option => {
-        option.classList.remove('active');
-    });
-    const activeOption = document.querySelector(`.theme-option[data-theme="${themeName}"]`);
-    if (activeOption)
-        activeOption.classList.add('active');
+    NoahShared.setActiveThemeOption(themeName);
     updateLogoForCurrentTheme();
     updateMatrixTheme();
     updateCursorColors();
-    if (typeof gtag !== 'undefined') {
-        gtag('event', 'theme_change', {
-            'event_category': 'settings',
-            'event_label': themeName,
-            'value': 1
-        });
-    }
+    NoahShared.trackSettingsEvent('theme_change', themeName);
 }
 function updateLogoForCurrentTheme() {
-    const currentTheme = localStorage.getItem('selectedTheme') || 'default';
-    const defaultLogo = "https://cdn.jsdelivr.net/gh/NoahsAmazingTutoringHelp/Noahs-Calculus-Tutor/images/logo.png";
-    document.querySelectorAll('.logo, .home-logo').forEach(logoEl => {
+    const currentTheme = NoahShared.readSetting('selectedTheme');
+    const defaultLogo = NoahShared.SITE_ASSETS.DEFAULT_LOGO;
+    NoahShared.forEachSiteLogo(logoEl => {
         logoEl.src = defaultLogo;
         logoEl.dataset.baseSrc = defaultLogo;
     });
     if (currentTheme !== 'default') {
         setTimeout(() => {
             const { r, g, b } = getBackgroundColorRGB();
-            document.querySelectorAll('.logo, .home-logo').forEach(logoEl => {
+            NoahShared.forEachSiteLogo(logoEl => {
                 tintLogoElementExact(logoEl, r, g, b);
             });
         }, 50);
@@ -2763,16 +2616,13 @@ function applyCustomTheme() {
         return;
     }
     colorPreview.style.background = hexColor;
-    localStorage.setItem('selectedTheme', 'custom');
-    localStorage.setItem('customThemeColor', hexColor);
+    NoahShared.writeSetting('selectedTheme', 'custom');
+    NoahShared.writeSetting('customThemeColor', hexColor);
     const body = document.body;
-    body.classList.remove('theme-rainbow', 'theme-cyber-green', 'theme-ice-blue', 'theme-solarized', 'theme-purple-haze');
+    NoahShared.resetThemeClasses(body);
     updateMatrixTheme();
     updateCursorColors();
-    document.querySelectorAll('.theme-option').forEach(option => {
-        option.classList.remove('active');
-    });
-    document.querySelector('.theme-option[data-theme="custom"]').classList.add('active');
+    NoahShared.setActiveThemeOption('custom');
     hexInput.style.borderColor = 'var(--accent-orange)';
     setTimeout(() => {
         hexInput.style.borderColor = '';
@@ -2802,11 +2652,11 @@ function setCursorStyle(style) {
         document.documentElement.style.cursor = 'default';
         document.body.style.cursor = 'default';
     }
-    localStorage.setItem('cursorStyle', cursorStyle);
-    localStorage.setItem('cursorEnabled', cursorEnabled);
+    NoahShared.writeSetting('cursorStyle', cursorStyle);
+    NoahShared.writeSetting('cursorEnabled', cursorEnabled);
 }
 function toggleCursorSetting(enabled) {
-    setCursorStyle(enabled ? (localStorage.getItem('cursorStyle') || 'ring') : 'default');
+    setCursorStyle(enabled ? NoahShared.readSetting('cursorStyle') : 'default');
 }
 function applyMatrixFilterForCustomColor(hexColor) {
     refreshActiveBackground();
@@ -2834,23 +2684,18 @@ function applyInactiveTabSettings() {
     if (!titleInput || !faviconInput)
         return;
     const newTitle = titleInput.value.trim() || 'Home';
-    const newFavicon = faviconInput.value.trim() || 'https://raw.githubusercontent.com/NoahsAmazingTutoringHelp/Noahs-Calculus-Tutor/master/images/fruh.png';
-    localStorage.setItem('inactiveTabTitle', newTitle);
-    localStorage.setItem('inactiveTabFavicon', newFavicon);
+    const newFavicon = faviconInput.value.trim() || NoahShared.SITE_ASSETS.DEFAULT_INACTIVE_FAVICON;
+    NoahShared.writeSetting('inactiveTabTitle', newTitle);
+    NoahShared.writeSetting('inactiveTabFavicon', newFavicon);
     if (document.hidden) {
         document.title = newTitle;
         setFavicon(newFavicon);
     }
     const applyBtn = event.target;
-    const originalText = applyBtn.innerHTML;
-    applyBtn.innerHTML = '<i class="fas fa-check"><\/i> Applied!';
-    applyBtn.style.borderColor = 'var(--accent-orange)';
-    applyBtn.style.background = 'rgba(var(--primary-orange-rgb), 0.3)';
-    setTimeout(() => {
-        applyBtn.innerHTML = originalText;
-        applyBtn.style.borderColor = '';
-        applyBtn.style.background = '';
-    }, 1500);
+    NoahShared.flashButtonFeedback(applyBtn, '<i class="fas fa-check"><\/i> Applied!', {
+        borderColor: 'var(--accent-orange)',
+        background: 'rgba(var(--primary-orange-rgb), 0.3)'
+    });
 }
 function handleLogoUpload(event) {
     const file = event.target.files[0];
@@ -2863,23 +2708,14 @@ function handleLogoUpload(event) {
     const reader = new FileReader();
     reader.onload = function (e) {
         const logoData = e.target.result;
-        const logoPreview = document.getElementById('logoPreview');
-        const previewImg = logoPreview.querySelector('img');
-        previewImg.src = logoData;
-        previewImg.style.display = 'block';
-        logoPreview.querySelector('i').style.display = 'none';
+        NoahShared.setLogoPreview(logoData);
         setSiteLogos(logoData);
-        localStorage.setItem('customLogo', logoData);
+        NoahShared.writeSetting('customLogo', logoData);
         const fileBtn = event.target.parentElement;
-        const originalHTML = fileBtn.innerHTML;
-        fileBtn.innerHTML = '<i class="fas fa-check"><\/i> Logo Uploaded!';
-        fileBtn.style.borderColor = 'var(--accent-orange)';
-        fileBtn.style.background = 'rgba(var(--primary-orange-rgb), 0.3)';
-        setTimeout(() => {
-            fileBtn.innerHTML = originalHTML;
-            fileBtn.style.borderColor = '';
-            fileBtn.style.background = '';
-        }, 1500);
+        NoahShared.flashButtonFeedback(fileBtn, '<i class="fas fa-check"><\/i> Logo Uploaded!', {
+            borderColor: 'var(--accent-orange)',
+            background: 'rgba(var(--primary-orange-rgb), 0.3)'
+        });
     };
     reader.readAsDataURL(file);
 }
@@ -2913,12 +2749,12 @@ const logoTintCache = new Map();
 function tintLogoElementExact(logoEl, r, g, b) {
     if (!logoEl)
         return;
-    const currentTheme = localStorage.getItem('selectedTheme') || 'default';
+    const currentTheme = NoahShared.readSetting('selectedTheme');
     const isDefaultTheme = currentTheme === 'default';
     const isDefaultColor = r === 194 && g === 124 && b === 21;
     if (isDefaultTheme || isDefaultColor) {
         const baseSrc = logoEl.dataset.baseSrc ||
-            "https://cdn.jsdelivr.net/gh/NoahsAmazingTutoringHelp/Noahs-Calculus-Tutor/images/logo.png";
+            NoahShared.SITE_ASSETS.DEFAULT_LOGO;
         if (logoEl.src !== baseSrc) {
             logoEl.src = baseSrc;
         }
@@ -2988,10 +2824,10 @@ function tintLogoElementExact(logoEl, r, g, b) {
     img.src = baseSrc;
 }
 function syncLogoThemeTone() {
-    const currentTheme = localStorage.getItem('selectedTheme') || 'default';
+    const currentTheme = NoahShared.readSetting('selectedTheme');
     if (currentTheme === 'default') {
-        const defaultLogo = "https://cdn.jsdelivr.net/gh/NoahsAmazingTutoringHelp/Noahs-Calculus-Tutor/images/logo.png";
-        document.querySelectorAll('.logo, .home-logo').forEach(logoEl => {
+        const defaultLogo = NoahShared.SITE_ASSETS.DEFAULT_LOGO;
+        NoahShared.forEachSiteLogo(logoEl => {
             if (logoEl.src !== defaultLogo) {
                 logoEl.src = defaultLogo;
             }
@@ -2999,7 +2835,7 @@ function syncLogoThemeTone() {
         return;
     }
     const { r, g, b } = getBackgroundColorRGB();
-    document.querySelectorAll('.logo, .home-logo').forEach(logoEl => {
+    NoahShared.forEachSiteLogo(logoEl => {
         tintLogoElementExact(logoEl, r, g, b);
     });
 }
@@ -3008,68 +2844,54 @@ function updateMatrixTheme() {
     refreshActiveBackground();
 }
 function revertLogo() {
-    const defaultLogo = "https://cdn.jsdelivr.net/gh/NoahsAmazingTutoringHelp/Noahs-Calculus-Tutor/images/logo.png";
-    const logoPreview = document.getElementById('logoPreview');
-    const previewImg = logoPreview.querySelector('img');
-    previewImg.src = defaultLogo;
-    previewImg.style.display = 'block';
-    logoPreview.querySelector('i').style.display = 'none';
+    const defaultLogo = NoahShared.SITE_ASSETS.DEFAULT_LOGO;
+    NoahShared.setLogoPreview(defaultLogo);
     setSiteLogos(defaultLogo);
-    localStorage.removeItem('customLogo');
+    NoahShared.removeSetting('customLogo');
     const revertBtn = event.target;
-    const originalText = revertBtn.innerHTML;
-    revertBtn.innerHTML = '<i class="fas fa-check"><\/i> Logo Reverted!';
-    revertBtn.style.background = 'rgba(0, 255, 0, 0.2)';
-    revertBtn.style.borderColor = 'var(--accent-orange)';
-    setTimeout(() => {
-        revertBtn.innerHTML = originalText;
-        revertBtn.style.background = '';
-        revertBtn.style.borderColor = '';
-    }, 1500);
+    NoahShared.flashButtonFeedback(revertBtn, '<i class="fas fa-check"><\/i> Logo Reverted!', {
+        background: 'rgba(0, 255, 0, 0.2)',
+        borderColor: 'var(--accent-orange)'
+    });
 }
 function revertFavicon() {
-    const defaultFavicon = "https://raw.githubusercontent.com/NoahsAmazingTutoringHelp/Noahs-Calculus-Tutor/master/cuh.png";
-    const defaultInactiveFavicon = "https://raw.githubusercontent.com/NoahsAmazingTutoringHelp/Noahs-Calculus-Tutor/master/images/fruh.png";
+    const defaultFavicon = NoahShared.SITE_ASSETS.DEFAULT_FAVICON;
+    const defaultInactiveFavicon = NoahShared.SITE_ASSETS.DEFAULT_INACTIVE_FAVICON;
     const titleInput = document.getElementById('customTitle');
     const faviconInput = document.getElementById('customFavicon');
     if (titleInput)
         titleInput.value = 'Home';
     if (faviconInput)
         faviconInput.value = defaultInactiveFavicon;
-    localStorage.removeItem('inactiveTabTitle');
-    localStorage.removeItem('inactiveTabFavicon');
+    NoahShared.removeSetting('inactiveTabTitle');
+    NoahShared.removeSetting('inactiveTabFavicon');
     if (document.hidden) {
         document.title = 'Home';
         setFavicon(defaultInactiveFavicon);
     }
     const revertBtn = event.target;
-    const originalText = revertBtn.innerHTML;
-    revertBtn.innerHTML = '<i class="fas fa-check"><\/i> Favicon Reverted!';
-    revertBtn.style.background = 'rgba(0, 255, 0, 0.2)';
-    revertBtn.style.borderColor = 'var(--accent-orange)';
-    setTimeout(() => {
-        revertBtn.innerHTML = originalText;
-        revertBtn.style.background = '';
-        revertBtn.style.borderColor = '';
-    }, 1500);
+    NoahShared.flashButtonFeedback(revertBtn, '<i class="fas fa-check"><\/i> Favicon Reverted!', {
+        background: 'rgba(0, 255, 0, 0.2)',
+        borderColor: 'var(--accent-orange)'
+    });
 }
 function initializeSettings() {
-    const savedCursorStyle = localStorage.getItem('cursorStyle');
-    const savedCursorEnabled = localStorage.getItem('cursorEnabled');
+    const savedCursorStyle = NoahShared.readStoredSetting('cursorStyle');
+    const savedCursorEnabled = NoahShared.readStoredSetting('cursorEnabled');
     const initialCursorStyle = savedCursorStyle || (savedCursorEnabled === 'false' ? 'default' : 'ring');
     setCursorStyle(initialCursorStyle);
     const cursorStyleSelect = document.getElementById('cursorStyleSelect');
     if (cursorStyleSelect)
         cursorStyleSelect.value = initialCursorStyle;
-    const savedTheme = localStorage.getItem('selectedTheme') || 'default';
+    const savedTheme = NoahShared.readSetting('selectedTheme');
     if (savedTheme) {
         const body = document.body;
-        body.classList.remove('theme-rainbow', 'theme-cyber-green', 'theme-ice-blue', 'theme-solarized', 'theme-purple-haze');
+        NoahShared.resetThemeClasses(body);
         if (savedTheme !== 'default' && savedTheme !== 'custom') {
             body.classList.add(`theme-${savedTheme}`);
         }
         if (savedTheme === 'custom') {
-            const customColor = localStorage.getItem('customThemeColor') || '#c27c15';
+            const customColor = NoahShared.readSetting('customThemeColor');
             applyCustomThemeColors(customColor);
         }
         else {
@@ -3078,11 +2900,11 @@ function initializeSettings() {
             document.documentElement.style.removeProperty('--accent-orange');
         }
     }
-    const savedBackground = normalizeBackgroundStyle(localStorage.getItem('selectedBackground') || 'matrix');
+    const savedBackground = normalizeBackgroundStyle(NoahShared.readSetting('selectedBackground'));
     applyBackgroundStyle(savedBackground, false);
     updateMatrixTheme();
     updateCursorColors();
-    const savedCustomColor = localStorage.getItem('customThemeColor');
+    const savedCustomColor = NoahShared.readStoredSetting('customThemeColor');
     if (savedCustomColor) {
         document.getElementById('customHexInput').value = savedCustomColor;
         const colorPreview = document.getElementById('colorPreview');
@@ -3090,45 +2912,37 @@ function initializeSettings() {
             colorPreview.style.background = savedCustomColor;
         }
     }
-    const savedTitle = localStorage.getItem('inactiveTabTitle');
-    const savedFavicon = localStorage.getItem('inactiveTabFavicon');
+    const savedTitle = NoahShared.readStoredSetting('inactiveTabTitle');
+    const savedFavicon = NoahShared.readStoredSetting('inactiveTabFavicon');
     if (savedTitle)
         document.getElementById('customTitle').value = savedTitle;
     if (savedFavicon)
         document.getElementById('customFavicon').value = savedFavicon;
-    const savedLogo = localStorage.getItem('customLogo');
+    const savedLogo = NoahShared.readStoredSetting('customLogo');
     if (savedLogo) {
-        const logoPreview = document.getElementById('logoPreview');
-        if (logoPreview) {
-            const previewImg = logoPreview.querySelector('img');
-            if (previewImg) {
-                previewImg.src = savedLogo;
-                previewImg.style.display = 'block';
-                logoPreview.querySelector('i').style.display = 'none';
-            }
-        }
+        NoahShared.setLogoPreview(savedLogo);
         setSiteLogos(savedLogo);
     }
     updateBackgroundSelectionUI();
 }
 function setDefaultSettings() {
-    if (!localStorage.getItem('selectedTheme')) {
-        localStorage.setItem('selectedTheme', 'default');
+    if (!NoahShared.readStoredSetting('selectedTheme')) {
+        NoahShared.writeSetting('selectedTheme', 'default');
     }
-    if (!localStorage.getItem('selectedBackground')) {
-        localStorage.setItem('selectedBackground', 'matrix');
+    if (!NoahShared.readStoredSetting('selectedBackground')) {
+        NoahShared.writeSetting('selectedBackground', 'matrix');
     }
-    if (!localStorage.getItem('cursorEnabled')) {
-        localStorage.setItem('cursorEnabled', 'true');
+    if (!NoahShared.readStoredSetting('cursorEnabled')) {
+        NoahShared.writeSetting('cursorEnabled', 'true');
     }
-    if (!localStorage.getItem('cursorStyle')) {
-        localStorage.setItem('cursorStyle', 'ring');
+    if (!NoahShared.readStoredSetting('cursorStyle')) {
+        NoahShared.writeSetting('cursorStyle', 'ring');
     }
-    if (!localStorage.getItem('inactiveTabTitle')) {
-        localStorage.setItem('inactiveTabTitle', 'Home');
+    if (!NoahShared.readStoredSetting('inactiveTabTitle')) {
+        NoahShared.writeSetting('inactiveTabTitle', 'Home');
     }
-    if (!localStorage.getItem('inactiveTabFavicon')) {
-        localStorage.setItem('inactiveTabFavicon', 'https://raw.githubusercontent.com/NoahsAmazingTutoringHelp/Noahs-Calculus-Tutor/master/images/fruh.png');
+    if (!NoahShared.readStoredSetting('inactiveTabFavicon')) {
+        NoahShared.writeSetting('inactiveTabFavicon', NoahShared.SITE_ASSETS.DEFAULT_INACTIVE_FAVICON);
     }
 }
 const ACTIVE_GAME_ID = 'active-game-session';
@@ -3605,21 +3419,13 @@ function createGameFrameWithHarness(gamePath, gameTitle) {
 </html>`;
 }
 function openLesson(t, u) {
-    if (typeof gtag !== 'undefined') {
-        gtag('event', 'game_launch', {
-            'event_category': 'game_interaction',
-            'event_label': t,
-            'value': 1
-        });
-    }
+    NoahShared.trackGameEvent('game_launch', t);
     const timeOnSite = Math.round((Date.now() - window.pageLoadTime) / 1000);
-    if (typeof gtag !== 'undefined') {
-        gtag('event', 'timing_complete', {
-            'name': 'time_to_first_game',
-            'value': timeOnSite,
-            'event_category': 'engagement'
-        });
-    }
+    NoahShared.trackEvent('timing_complete', {
+        'name': 'time_to_first_game',
+        'value': timeOnSite,
+        'event_category': 'engagement'
+    });
     const normalizedUrl = (u || '').trim();
 
     const activeTab = getActiveGameTab();
@@ -3695,11 +3501,11 @@ function getAllSettings() {
         settings: {
             selectedTheme: localData.selectedTheme || 'default',
             selectedBackground: localData.selectedBackground || 'matrix',
-            customThemeColor: localData.customThemeColor || '#c27c15',
+            customThemeColor: localData.customThemeColor || NoahShared.SITE_ASSETS.DEFAULT_ACCENT_COLOR,
             cursorEnabled: localData.cursorEnabled || 'true',
             cursorStyle: localData.cursorStyle || 'ring',
             inactiveTabTitle: localData.inactiveTabTitle || 'Home',
-            inactiveTabFavicon: localData.inactiveTabFavicon || 'https://raw.githubusercontent.com/NoahsAmazingTutoringHelp/Noahs-Calculus-Tutor/master/images/fruh.png',
+            inactiveTabFavicon: localData.inactiveTabFavicon || NoahShared.SITE_ASSETS.DEFAULT_INACTIVE_FAVICON,
             customLogo: localData.customLogo || null,
             flashEnabled: localData.flashEnabled || 'true',
             lastSearchTerm: localData.lastSearchTerm || '',
@@ -3731,13 +3537,7 @@ function exportSettings() {
         document.body.removeChild(link);
         URL.revokeObjectURL(url);
         showImportStatus('Site data exported successfully!', 'success');
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'settings_export', {
-                'event_category': 'settings',
-                'event_label': 'export',
-                'value': 1
-            });
-        }
+        NoahShared.trackSettingsEvent('settings_export', 'export');
     }, 100);
 }
 function importSettings() {
@@ -3774,13 +3574,7 @@ function importSettings() {
                     fileInput.value = '';
                     importContainer.style.display = 'none';
                 }
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'settings_import', {
-                        'event_category': 'settings',
-                        'event_label': 'import',
-                        'value': 1
-                    });
-                }
+                NoahShared.trackSettingsEvent('settings_import', 'import');
             }
         }
         catch (error) {
@@ -3831,43 +3625,37 @@ function applyImportedSettings(importedSettings) {
     }
     if (importedSettings.favorites && Array.isArray(importedSettings.favorites)) {
         favorites = importedSettings.favorites;
-        localStorage.setItem('gameFavorites', JSON.stringify(favorites));
+        NoahShared.writeJsonSetting('gameFavorites', favorites);
     }
     const settings = importedSettings.settings && typeof importedSettings.settings === 'object'
         ? importedSettings.settings
         : {
-            selectedTheme: localStorage.getItem('selectedTheme') || 'default',
-            selectedBackground: localStorage.getItem('selectedBackground') || 'matrix',
-            customThemeColor: localStorage.getItem('customThemeColor') || '#c27c15',
-            cursorEnabled: localStorage.getItem('cursorEnabled') || 'true',
-            cursorStyle: localStorage.getItem('cursorStyle') || 'ring',
-            inactiveTabTitle: localStorage.getItem('inactiveTabTitle') || 'Home',
-            inactiveTabFavicon: localStorage.getItem('inactiveTabFavicon') || 'https://raw.githubusercontent.com/NoahsAmazingTutoringHelp/Noahs-Calculus-Tutor/master/images/fruh.png',
-            customLogo: localStorage.getItem('customLogo') || null,
-            flashEnabled: localStorage.getItem('flashEnabled') || 'true',
-            lastSearchTerm: localStorage.getItem('lastSearchTerm') || '',
-            sortMethod: localStorage.getItem('sortMethod') || 'default'
+            selectedTheme: NoahShared.readSetting('selectedTheme'),
+            selectedBackground: NoahShared.readSetting('selectedBackground'),
+            customThemeColor: NoahShared.readSetting('customThemeColor'),
+            cursorEnabled: NoahShared.readSetting('cursorEnabled'),
+            cursorStyle: NoahShared.readSetting('cursorStyle'),
+            inactiveTabTitle: NoahShared.readSetting('inactiveTabTitle'),
+            inactiveTabFavicon: NoahShared.readSetting('inactiveTabFavicon'),
+            customLogo: NoahShared.readSetting('customLogo'),
+            flashEnabled: NoahShared.readSetting('flashEnabled'),
+            lastSearchTerm: NoahShared.readSetting('lastSearchTerm'),
+            sortMethod: NoahShared.readSetting('sortMethod')
         };
     Object.keys(settings).forEach(key => {
         if (settings[key] !== null && settings[key] !== undefined) {
-            localStorage.setItem(key, String(settings[key]));
+            NoahShared.writeSetting(key, settings[key]);
         }
     });
-    const selectedTheme = settings.selectedTheme || 'default';
-    document.querySelectorAll('.theme-option').forEach(option => {
-        option.classList.remove('active');
-    });
-    const activeOption = document.querySelector(`.theme-option[data-theme="${selectedTheme}"]`);
-    if (activeOption) {
-        activeOption.classList.add('active');
-    }
+    const selectedTheme = settings.selectedTheme || NoahShared.SETTING_DEFAULTS.selectedTheme;
+    NoahShared.setActiveThemeOption(selectedTheme);
     const body = document.body;
-    body.classList.remove('theme-rainbow', 'theme-cyber-green', 'theme-ice-blue', 'theme-solarized', 'theme-purple-haze');
+    NoahShared.resetThemeClasses(body);
     if (selectedTheme !== 'default' && selectedTheme !== 'custom') {
         body.classList.add(`theme-${selectedTheme}`);
     }
     if (selectedTheme === 'custom') {
-        const customColor = settings.customThemeColor || '#c27c15';
+        const customColor = settings.customThemeColor || NoahShared.SITE_ASSETS.DEFAULT_ACCENT_COLOR;
         applyCustomThemeColors(customColor);
         const colorPreview = document.getElementById('colorPreview');
         const hexInput = document.getElementById('customHexInput');
@@ -3892,29 +3680,13 @@ function applyImportedSettings(importedSettings) {
         cursorStyleSelect.value = restoredCursorStyle;
     }
     if (settings.customLogo) {
-        const logoPreview = document.getElementById('logoPreview');
-        if (logoPreview) {
-            const previewImg = logoPreview.querySelector('img');
-            if (previewImg) {
-                previewImg.src = settings.customLogo;
-                previewImg.style.display = 'block';
-                logoPreview.querySelector('i').style.display = 'none';
-            }
-        }
+        NoahShared.setLogoPreview(settings.customLogo);
         setSiteLogos(settings.customLogo);
     }
     else {
-        const defaultLogo = "https://cdn.jsdelivr.net/gh/NoahsAmazingTutoringHelp/Noahs-Calculus-Tutor/images/logo.png";
-        const logoPreview = document.getElementById('logoPreview');
+        const defaultLogo = NoahShared.SITE_ASSETS.DEFAULT_LOGO;
         setSiteLogos(defaultLogo);
-        if (logoPreview) {
-            const previewImg = logoPreview.querySelector('img');
-            if (previewImg) {
-                previewImg.src = defaultLogo;
-                previewImg.style.display = 'block';
-                logoPreview.querySelector('i').style.display = 'none';
-            }
-        }
+        NoahShared.setLogoPreview(defaultLogo);
     }
     const titleInput = document.getElementById('customTitle');
     const faviconInput = document.getElementById('customFavicon');
@@ -3960,7 +3732,7 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
     const adToggle = document.getElementById('adToggle');
     if (adToggle) {
-        adToggle.checked = localStorage.getItem('adsDisabled') === 'true';
+        adToggle.checked = NoahShared.readStoredSetting('adsDisabled') === 'true';
     }
 });
 function openSiteInAboutBlank() {
@@ -4029,9 +3801,9 @@ function loadGameWithCompatibleUrl(title, originalUrl) {
 }
 function createGameLoadingScreen(gameTitle) {
     let primaryColor, accentColor, darkColor;
-    const currentTheme = localStorage.getItem('selectedTheme') || 'default';
+    const currentTheme = NoahShared.readSetting('selectedTheme');
     if (currentTheme === 'custom') {
-        const customColor = localStorage.getItem('customThemeColor') || '#c27c15';
+        const customColor = NoahShared.readSetting('customThemeColor');
         primaryColor = customColor;
         const hex = customColor.replace('#', '');
         const r = parseInt(hex.slice(0, 2), 16);
@@ -4048,7 +3820,7 @@ function createGameLoadingScreen(gameTitle) {
     }
     else {
         const themeColors = {
-            'default': { primary: '#c27c15', accent: '#e69500', dark: '#1a1a1a' },
+            'default': { primary: NoahShared.SITE_ASSETS.DEFAULT_ACCENT_COLOR, accent: '#e69500', dark: '#1a1a1a' },
             'rainbow': { primary: '#ff0080', accent: '#ff00ff', dark: '#0a0a0a' },
             'cyber-green': { primary: '#00ff00', accent: '#00cc00', dark: '#000000' },
             'ice-blue': { primary: '#00ccff', accent: '#0088cc', dark: '#001122' },
@@ -4071,7 +3843,7 @@ function createGameLoadingScreen(gameTitle) {
                 return hex.length === 1 ? '0' + hex : hex;
             }).join('');
         }
-        return '#c27c15';
+        return NoahShared.SITE_ASSETS.DEFAULT_ACCENT_COLOR;
     }
     function rgbToNumber(color) {
         if (color.startsWith('#')) {
@@ -4580,20 +4352,14 @@ function refreshGame() {
     const activeTab = getActiveGameTab();
     if (!activeTab)
         return;
-    if (typeof gtag !== 'undefined') {
-        gtag('event', 'game_refresh', {
-            'event_category': 'game_interaction',
-            'event_label': activeTab.title,
-            'value': 1
-        });
-    }
+    NoahShared.trackGameEvent('game_refresh', activeTab.title);
     loadGameIntoTab(activeTab);
 }
 function toggleAds(disabled) {
-    localStorage.setItem('adsDisabled', disabled ? 'true' : 'false');
+    NoahShared.writeSetting('adsDisabled', disabled ? 'true' : 'false');
     if (disabled) {
         if (confirm("Are you sure you want to turn off the ads? 🥺\n\nAll revenue from ads goes back into the site for things like:\n• Links & hosting\n• Servers & maintenance\n• Game updates & new content\n\nPress OK to disable ads and reload the page.")) {
-            localStorage.setItem('adsDisabled', 'true');
+            NoahShared.writeSetting('adsDisabled', 'true');
             alert("Okie doke! All ads will be disabled. The page will reload to apply changes.");
             setTimeout(() => location.reload(), 500);
         }
@@ -4602,12 +4368,12 @@ function toggleAds(disabled) {
         }
     }
     else {
-        localStorage.setItem('adsDisabled', 'false');
+        NoahShared.writeSetting('adsDisabled', 'false');
         alert("Yayyyyy! Ads will be enabled. The page will reload to apply changes.");
         setTimeout(() => location.reload(), 500);
     }
 }
-let favorites = JSON.parse(localStorage.getItem('gameFavorites')) || [];
+let favorites = NoahShared.readJsonSetting('gameFavorites', []);
 function updateGameDisplay(games) {
     const container = document.getElementById('allLessonsGrid');
     if (!container)
@@ -4820,7 +4586,7 @@ if (typeof applySorting === 'function') {
         setTimeout(() => applyGridColumns(), 50);
     };
 }
-localStorage.removeItem('gridColumns');
+NoahShared.removeSetting('gridColumns');
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => applyGridColumns());
 }

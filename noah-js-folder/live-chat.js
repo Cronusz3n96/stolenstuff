@@ -1,9 +1,5 @@
 (function () {
-  const CHAT_API_ORIGIN = typeof window !== 'undefined' && typeof window.__CHAT_API_ORIGIN__ === 'string' && window.__CHAT_API_ORIGIN__
-    ? window.__CHAT_API_ORIGIN__.replace(/\/+$/, '')
-    : ((window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') && window.location.port !== '8090'
-      ? 'http://127.0.0.1:8090'
-      : window.location.origin);
+  const CHAT_API_ORIGIN = window.NoahShared.getApiOrigin();
 
   const pb = typeof window.PocketBase === 'function'
     ? new window.PocketBase(CHAT_API_ORIGIN)
@@ -436,14 +432,7 @@
     ]);
   }
 
-  function escapeHtml(value) {
-    return String(value || '')
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;');
-  }
+  const escapeHtml = value => NoahShared.escapeHtml(value || '');
 
   function appendMessageTextWithMentions(container, value) {
     const text = String(value || '');
@@ -1348,10 +1337,7 @@
       reason: '',
       detail: ''
     };
-    try {
-      localStorage.removeItem('noahsAccountLock');
-    } catch (error) {
-    }
+    NoahShared.removeSetting('noahsAccountLock');
     exposeAccountLockState();
   }
 
@@ -1397,21 +1383,15 @@
     state.adminReports = [];
     state.modsDirectory = [];
     state.lastRenderedMessagesKey = '';
-    try {
-      localStorage.setItem('noahsAccountLock', JSON.stringify(state.accountLock));
-    } catch (error) {
-    }
+    NoahShared.writeJsonSetting('noahsAccountLock', state.accountLock);
     exposeAccountLockState();
   }
 
   function restoreAccountLock() {
     exposeAccountLockState();
-    try {
-      const stored = JSON.parse(localStorage.getItem('noahsAccountLock') || 'null');
-      if (stored && stored.active) {
-        markAccountLocked(stored.reason || 'locked', stored.detail || '', stored.until || null);
-      }
-    } catch (error) {
+    const stored = NoahShared.readJsonSetting('noahsAccountLock', null);
+    if (stored && stored.active) {
+      markAccountLocked(stored.reason || 'locked', stored.detail || '', stored.until || null);
     }
   }
 
@@ -1484,19 +1464,9 @@
       frame.classList.remove('fullscreen');
     });
 
-    const exitFullscreen = document.exitFullscreen ||
-      document.webkitExitFullscreen ||
-      document.msExitFullscreen ||
-      document.mozCancelFullScreen;
-
-    if (exitFullscreen && (
-      document.fullscreenElement ||
-      document.webkitFullscreenElement ||
-      document.msFullscreenElement ||
-      document.mozFullScreenElement
-    )) {
+    if (NoahShared.getFullscreenElement()) {
       try {
-        const result = exitFullscreen.call(document);
+        const result = NoahShared.exitFullscreen();
         if (result && typeof result.catch === 'function') {
           result.catch(function () { });
         }
