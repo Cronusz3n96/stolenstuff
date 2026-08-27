@@ -306,7 +306,7 @@ function injectWatermark(htmlContent, gameTitle) {
 		                            }
 		                        <\/style>
 		                        <div id="noahs-watermark"
-		                             onclick="window.open('https://unpkg.com/noahs-tutoring-hub@1.0.1/index.html', '_blank');"
+		                             onclick="window.open('https://unpkg.com/noahs-tutoring-hub@1.0.1/index.html', '_blank', 'noopener');"
 		                             style="
 		                                all: initial !important;
 		                                position: fixed !important;
@@ -3449,7 +3449,7 @@ function getGameFreezeHarnessScript() {
           }
 
           window.addEventListener('message', function(event) {
-            if (!event || !event.data || event.data.type !== 'NOAH_TAB_STATE') return;
+            if (window.parent === window || !event || event.source !== window.parent || !event.data || event.data.type !== 'NOAH_TAB_STATE') return;
             setFrozen(!!event.data.frozen);
           });
 
@@ -3595,7 +3595,7 @@ function createGameFrameWithHarness(gamePath, gameTitle) {
             });
 
             window.addEventListener('message', function(event) {
-                if (!event || !event.data || event.data.type !== 'NOAH_TAB_STATE') return;
+                if (window.parent === window || !event || event.source !== window.parent || !event.data || event.data.type !== 'NOAH_TAB_STATE') return;
                 frozen = !!event.data.frozen;
                 applyFrozenState();
             });
@@ -3654,35 +3654,23 @@ document.addEventListener('keydown', (e) => {
         openSettings();
     }
 });
+function isSensitiveStorageKey(key) {
+    return key === 'pocketbase_auth' || /auth|token|session|password|secret|credential/i.test(key);
+}
 function readStorageObject(storage) {
     const data = {};
     if (!storage)
         return data;
     for (let i = 0; i < storage.length; i++) {
         const key = storage.key(i);
-        if (key !== null)
+        if (key !== null && !isSensitiveStorageKey(key))
             data[key] = storage.getItem(key);
     }
     return data;
 }
-function parseCookiesToObject() {
-    const cookieObject = {};
-    const raw = document.cookie || '';
-    if (!raw.trim())
-        return cookieObject;
-    raw.split(';').forEach(cookiePart => {
-        const [rawKey, ...rest] = cookiePart.split('=');
-        const key = (rawKey || '').trim();
-        if (!key)
-            return;
-        cookieObject[key] = rest.join('=').trim();
-    });
-    return cookieObject;
-}
 function getAllSettings() {
     const localData = readStorageObject(window.localStorage);
     const sessionData = readStorageObject(window.sessionStorage);
-    const cookiesData = parseCookiesToObject();
     return {
         version: '2.0',
         exportDate: new Date().toISOString(),
@@ -3690,7 +3678,6 @@ function getAllSettings() {
         exportType: 'site-data',
         localStorageData: localData,
         sessionStorageData: sessionData,
-        cookiesData: cookiesData,
         favorites: Array.isArray(favorites) ? favorites : [],
         settings: {
             selectedTheme: localData.selectedTheme || 'default',
@@ -3807,25 +3794,30 @@ function validateSettings(settings) {
 }
 function applyImportedSettings(importedSettings) {
     if (importedSettings.localStorageData && typeof importedSettings.localStorageData === 'object') {
-        localStorage.clear();
+        const localStorageKeys = [];
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            if (key !== null && !isSensitiveStorageKey(key))
+                localStorageKeys.push(key);
+        }
+        localStorageKeys.forEach(key => localStorage.removeItem(key));
         Object.entries(importedSettings.localStorageData).forEach(([key, value]) => {
-            if (typeof key === 'string' && key) {
+            if (typeof key === 'string' && key && !isSensitiveStorageKey(key)) {
                 localStorage.setItem(key, value === null || value === undefined ? '' : String(value));
             }
         });
     }
     if (importedSettings.sessionStorageData && typeof importedSettings.sessionStorageData === 'object') {
-        sessionStorage.clear();
+        const sessionStorageKeys = [];
+        for (let i = 0; i < sessionStorage.length; i++) {
+            const key = sessionStorage.key(i);
+            if (key !== null && !isSensitiveStorageKey(key))
+                sessionStorageKeys.push(key);
+        }
+        sessionStorageKeys.forEach(key => sessionStorage.removeItem(key));
         Object.entries(importedSettings.sessionStorageData).forEach(([key, value]) => {
-            if (typeof key === 'string' && key) {
+            if (typeof key === 'string' && key && !isSensitiveStorageKey(key)) {
                 sessionStorage.setItem(key, value === null || value === undefined ? '' : String(value));
-            }
-        });
-    }
-    if (importedSettings.cookiesData && typeof importedSettings.cookiesData === 'object') {
-        Object.entries(importedSettings.cookiesData).forEach(([key, value]) => {
-            if (typeof key === 'string' && key) {
-                document.cookie = `${key}=${value ?? ''}; path=/; max-age=31536000`;
             }
         });
     }
@@ -3849,7 +3841,7 @@ function applyImportedSettings(importedSettings) {
             sortMethod: localStorage.getItem('sortMethod') || 'default'
         };
     Object.keys(settings).forEach(key => {
-        if (settings[key] !== null && settings[key] !== undefined) {
+        if (!isSensitiveStorageKey(key) && settings[key] !== null && settings[key] !== undefined) {
             localStorage.setItem(key, String(settings[key]));
         }
     });

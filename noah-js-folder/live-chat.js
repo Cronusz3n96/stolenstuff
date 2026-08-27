@@ -2685,12 +2685,12 @@
             '<div class="chat-list-avatar"><span>?</span><img alt=""></div>' +
               '<div class="chat-list-copy">' +
               '<div class="chat-list-title"></div>' +
-              '<div class="chat-list-subline">' + formatRelativeDay(request.user.lastSeenAt) + '</div>' +
+              '<div class="chat-list-subline">' + escapeHtml(formatRelativeDay(request.user.lastSeenAt)) + '</div>' +
             '</div>' +
           '</div>' +
           '<div class="chat-request-actions">' +
-            '<button class="community-btn community-btn-primary" data-request-action="accept" data-request-id="' + request.id + '" type="button">Accept</button>' +
-            '<button class="community-btn community-btn-secondary" data-request-action="decline" data-request-id="' + request.id + '" type="button">Decline</button>' +
+            '<button class="community-btn community-btn-primary" data-request-action="accept" data-request-id="' + escapeHtml(request.id) + '" type="button">Accept</button>' +
+            '<button class="community-btn community-btn-secondary" data-request-action="decline" data-request-id="' + escapeHtml(request.id) + '" type="button">Decline</button>' +
           '</div>';
         renderListAvatar(card.querySelector('.chat-list-avatar'), request.user.username, buildUserAvatarUrl(request.user));
         setUsernameDisplay(card.querySelector('.chat-list-title'), request.user.username);
@@ -2731,7 +2731,7 @@
             '</div>' +
           '</div>' +
           '<div class="chat-request-actions">' +
-            '<button class="community-btn community-btn-secondary" data-block-action="unblock" data-username="' + user.username + '" type="button">Unblock</button>' +
+            '<button class="community-btn community-btn-secondary" data-block-action="unblock" data-username="' + escapeHtml(user.username) + '" type="button">Unblock</button>' +
           '</div>';
         renderListAvatar(card.querySelector('.chat-list-avatar'), user.username, buildUserAvatarUrl(user));
         setUsernameDisplay(card.querySelector('.chat-list-title'), user.username);
@@ -3258,25 +3258,25 @@
               '<div class="admin-report-title">' + escapeHtml(report.reportedUsername) + ' · ' + escapeHtml((report.roomType || '').toUpperCase()) + '</div>' +
               '<div class="admin-report-tag ' + (status === 'open' ? 'is-open' : 'is-closed') + '">' + statusLabel + '</div>' +
             '</div>' +
-            '<div class="admin-report-meta">Reporter: ' + escapeHtml(report.reporterUsername) + ' · Room: ' + escapeHtml(report.roomName) + ' · ' + formatAbsoluteTime(report.created) + '</div>' +
+            '<div class="admin-report-meta">Reporter: ' + escapeHtml(report.reporterUsername) + ' · Room: ' + escapeHtml(report.roomName) + ' · ' + escapeHtml(formatAbsoluteTime(report.created)) + '</div>' +
           '</div>' +
         '</div>' +
         '<div class="admin-report-snapshot">' + escapeHtml(report.messageSnapshot) + '</div>' +
         '<div class="admin-report-copy">Reason: ' + escapeHtml(report.reason) + '</div>' +
         '<div class="admin-report-controls">' +
-          '<select class="text-input" data-report-select="' + report.id + '"' + controlsDisabled + '>' +
+          '<select class="text-input" data-report-select="' + escapeHtml(report.id) + '"' + controlsDisabled + '>' +
             actionOptions +
           '</select>' +
-          '<input class="text-input" data-report-duration="' + report.id + '" min="1" placeholder="' + durationPlaceholder + '" type="number"' + controlsDisabled + '>' +
-          '<select class="text-input" data-report-unit="' + report.id + '"' + controlsDisabled + '>' +
+          '<input class="text-input" data-report-duration="' + escapeHtml(report.id) + '" min="1" placeholder="' + durationPlaceholder + '" type="number"' + controlsDisabled + '>' +
+          '<select class="text-input" data-report-unit="' + escapeHtml(report.id) + '"' + controlsDisabled + '>' +
             '<option value="minutes">Minutes</option>' +
             '<option value="hours">Hours</option>' +
             '<option value="days">Days</option>' +
           '</select>' +
         '</div>' +
         '<div class="admin-report-actions">' +
-          '<button class="community-btn community-btn-primary" data-report-action="apply" data-report-id="' + report.id + '"' + controlsDisabled + ' type="button">Apply</button>' +
-          '<button class="community-btn community-btn-secondary" data-report-action="dismiss" data-report-id="' + report.id + '"' + controlsDisabled + ' type="button">Dismiss</button>' +
+          '<button class="community-btn community-btn-primary" data-report-action="apply" data-report-id="' + escapeHtml(report.id) + '"' + controlsDisabled + ' type="button">Apply</button>' +
+          '<button class="community-btn community-btn-secondary" data-report-action="dismiss" data-report-id="' + escapeHtml(report.id) + '"' + controlsDisabled + ' type="button">Dismiss</button>' +
         '</div>' +
         actionLine;
 
