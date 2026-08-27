@@ -1,0 +1,40 @@
+name: Download Games from Noah
+on:
+  workflow_dispatch:  # lets you click "Run" manually
+  schedule:
+    - cron: '0 0 * * 0'  # auto-run every Sunday
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Download all games & images
+        run: |
+          BASE="https://www.noahstutoring.academy"
+          mkdir -p games images
+          
+          # Download every game file referenced in games.js
+          grep -oP 'url:\s*"[^"]*"' noah-js-folder/games.js | grep -v 'http' | sed 's/.*"\(.*\)".*/\1/' | while read path; do
+            mkdir -p "games/$(dirname "$path" | sed 's|^games/||')"
+            curl -sL --retry 3 "$BASE/$path" -o "$path" || true
+          done
+          
+          # Download every image referenced in games.js
+          grep -oP 'image:\s*"[^"]*"' noah-js-folder/games.js | grep -v 'http' | sed 's/.*"\(.*\)".*/\1/' | while read path; do
+            mkdir -p "images/$(dirname "$path" | sed 's|^images/||')"
+            curl -sL --retry 3 "$BASE/$path" -o "$path" || true
+          done
+          
+          echo "Downloaded:"
+          find games images -type f | wc -l
+          echo "files"
+
+      - name: Commit & Push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add games/ images/
+          git diff --cached --quiet || git commit -m "Auto-download games from noahstutoring.academy"
+          git push
