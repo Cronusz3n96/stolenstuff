@@ -141,15 +141,13 @@
 
   function requestFullscreen(element) {
     if (!element) {
-      return;
+      return undefined;
     }
     const request = element.requestFullscreen ||
       element.webkitRequestFullscreen ||
       element.msRequestFullscreen ||
       element.mozRequestFullScreen;
-    if (request) {
-      request.call(element);
-    }
+    return request ? request.call(element) : undefined;
   }
 
   function exitFullscreen() {
@@ -157,9 +155,7 @@
       document.webkitExitFullscreen ||
       document.msExitFullscreen ||
       document.mozCancelFullScreen;
-    if (exit) {
-      exit.call(document);
-    }
+    return exit ? exit.call(document) : undefined;
   }
 
   function resetThemeClasses(target) {

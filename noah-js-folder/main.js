@@ -2610,7 +2610,7 @@ function applyCustomTheme() {
         return;
     const hexColor = hexInput.value.trim();
     if (!applyCustomThemeColors(hexColor)) {
-        alert('Please enter a valid hex color (e.g., ' + NoahShared.SITE_ASSETS.DEFAULT_ACCENT_COLOR + ')');
+        alert('Please enter a valid hex color (e.g., #c27c15)');
         hexInput.style.borderColor = '#ff4444';
         setTimeout(() => hexInput.style.borderColor = '', 1000);
         return;
@@ -3422,9 +3422,9 @@ function openLesson(t, u) {
     NoahShared.trackGameEvent('game_launch', t);
     const timeOnSite = Math.round((Date.now() - window.pageLoadTime) / 1000);
     NoahShared.trackEvent('timing_complete', {
-            'name': 'time_to_first_game',
-            'value': timeOnSite,
-            'event_category': 'engagement'
+        'name': 'time_to_first_game',
+        'value': timeOnSite,
+        'event_category': 'engagement'
     });
     const normalizedUrl = (u || '').trim();
 
