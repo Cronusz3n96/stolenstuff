@@ -1,0 +1,2501 @@
+.proto-shell{position:relative;overflow:hidden;border-radius:34px;border-width:1px;border-color:hsla(0,0%,100%,.12);--tw-backdrop-blur:blur(22px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);background:linear-gradient(160deg,hsla(0,0%,100%,.06),hsla(0,0%,100%,.016))!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.14),0 16px 40px rgba(2,4,8,.08),0 0 30px hsla(0,0%,100%,.024)!important;-webkit-backdrop-filter:blur(24px) saturate(136%)!important;backdrop-filter:blur(24px) saturate(136%)!important}.proto-shell:before{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:linear-gradient(180deg,hsla(0,0%,100%,.18),hsla(0,0%,100%,.024) 34%,transparent 62%)!important;opacity:.4}.proto-clear{background:transparent!important;border:0!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}.proto-fog{--tw-backdrop-blur:blur(18px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);background:linear-gradient(160deg,hsla(0,0%,100%,.04),hsla(0,0%,100%,.012))!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.1),0 10px 28px rgba(2,4,8,.06)!important;-webkit-backdrop-filter:blur(20px) saturate(126%)!important;backdrop-filter:blur(20px) saturate(126%)!important}.proto-card,.proto-fog{border-radius:28px;border-width:1px;border-color:hsla(0,0%,100%,.1)}.proto-card{--tw-backdrop-blur:blur(14px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);background:linear-gradient(160deg,hsla(0,0%,100%,.044),hsla(0,0%,100%,.014))!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.1),0 10px 26px rgba(2,4,8,.06)!important;-webkit-backdrop-filter:blur(18px) saturate(128%)!important;backdrop-filter:blur(18px) saturate(128%)!important}body.proto-ui section.proto-shell{background:transparent!important;border:0!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}body.proto-ui #account-section:after,body.proto-ui #account-section:before,body.proto-ui #admin-section:after,body.proto-ui #admin-section:before,body.proto-ui #all-lessons:after,body.proto-ui #all-lessons:before,body.proto-ui #chat-section:after,body.proto-ui #chat-section:before,body.proto-ui #home-section:after,body.proto-ui #home-section:before,body.proto-ui #info-section:after,body.proto-ui #info-section:before,body.proto-ui #settings-section:after,body.proto-ui #settings-section:before,body.proto-ui .home-popular-wrap:before,body.proto-ui .lessons-header:before,body.proto-ui .sorter-wrapper:before{content:none!important;display:none!important;background:none!important}body.proto-ui #account-section,body.proto-ui #admin-section,body.proto-ui #all-lessons,body.proto-ui #chat-section,body.proto-ui #home-section,body.proto-ui #info-section,body.proto-ui #settings-section{background-color:transparent!important}body.proto-ui #all-lessons .search-stats,body.proto-ui #home-section .home-hero,body.proto-ui #home-section .home-stats-row,body.proto-ui #info-section .info-hero-copy{background:transparent!important;border-color:transparent!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}body.proto-ui #account-section .modal-title,body.proto-ui #admin-section .modal-title,body.proto-ui #all-lessons .lessons-header h2,body.proto-ui #home-section .home-popular-wrap h2,body.proto-ui #settings-section .modal-title,body.proto-ui .info-section-heading{background:transparent!important;box-shadow:none!important}body.proto-ui #account-section .account-shell,body.proto-ui #admin-section .admin-shell,body.proto-ui #chat-section .chat-app-shell,body.proto-ui #home-section .home-carousel,body.proto-ui #info-section .partners-grid,body.proto-ui #settings-section .settings-docs-layout,body.proto-ui #settings-section .settings-shell{min-height:0}body.proto-ui .live-counter,body.proto-ui .nav-tabs,body.proto-ui .top-bar{background:linear-gradient(160deg,hsla(0,0%,100%,.032),hsla(0,0%,100%,.01))!important;border-color:hsla(0,0%,100%,.1)!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.08),0 8px 22px rgba(2,4,8,.05)!important;-webkit-backdrop-filter:blur(18px) saturate(122%)!important;backdrop-filter:blur(18px) saturate(122%)!important}body.proto-ui{--primary-orange:#f4f6f8!important;--primary-orange-rgb:244,246,248!important;--accent-orange:#fff!important;--light-text:#f7f8fb!important;--gray-text:rgba(247,248,251,.66)!important;--cursor-bg:hsla(0,0%,100%,.1)!important;--cursor-border:hsla(0,0%,100%,.26)!important;--cursor-hover-bg:hsla(0,0%,100%,.18)!important;--cursor-hover-border:hsla(0,0%,100%,.42)!important;--proto-tint-rgb:244,246,248!important;--proto-shell-bg:linear-gradient(160deg,rgba(var(--proto-tint-rgb),0.10),rgba(var(--proto-tint-rgb),0.024));--proto-panel-bg:linear-gradient(160deg,rgba(var(--proto-tint-rgb),0.072),rgba(var(--proto-tint-rgb),0.018));--proto-panel-bg-strong:linear-gradient(160deg,rgba(var(--proto-tint-rgb),0.088),rgba(var(--proto-tint-rgb),0.024));--proto-chip-bg:linear-gradient(160deg,rgba(var(--proto-tint-rgb),0.058),rgba(var(--proto-tint-rgb),0.016));--proto-border:rgba(var(--proto-tint-rgb),0.16);--proto-border-strong:rgba(var(--proto-tint-rgb),0.22);--proto-shadow:inset 0 1px 0 hsla(0,0%,100%,.11),0 10px 30px rgba(2,4,8,.07),0 0 28px rgba(var(--proto-tint-rgb),0.05);--proto-shadow-soft:inset 0 1px 0 hsla(0,0%,100%,.09),0 8px 22px rgba(2,4,8,.05),0 0 18px rgba(var(--proto-tint-rgb),0.035)}body.proto-ui.theme-rainbow{--primary-orange:#ff0080!important;--primary-orange-rgb:255,0,128!important;--accent-orange:#f0f!important;--light-text:#f0f0f0!important;--gray-text:#aaa!important;--cursor-bg:rgba(255,0,128,.15)!important;--cursor-border:rgba(255,0,128,.5)!important;--cursor-hover-bg:rgba(255,0,128,.25)!important;--cursor-hover-border:rgba(255,0,255,.8)!important;--proto-tint-rgb:255,0,128!important}body.proto-ui.theme-cyber-green{--primary-orange:#0f0!important;--primary-orange-rgb:0,255,0!important;--accent-orange:#0c0!important;--light-text:#0f0!important;--gray-text:#080!important;--cursor-bg:rgba(0,255,0,.15)!important;--cursor-border:rgba(0,255,0,.5)!important;--cursor-hover-bg:rgba(0,255,0,.25)!important;--cursor-hover-border:rgba(0,204,0,.8)!important;--proto-tint-rgb:0,255,0!important}body.proto-ui.theme-ice-blue{--primary-orange:#0cf!important;--primary-orange-rgb:0,204,255!important;--accent-orange:#08c!important;--light-text:#e0f7ff!important;--gray-text:#8ac!important;--cursor-bg:rgba(0,204,255,.15)!important;--cursor-border:rgba(0,204,255,.5)!important;--cursor-hover-bg:rgba(0,204,255,.25)!important;--cursor-hover-border:rgba(0,136,204,.8)!important;--proto-tint-rgb:0,204,255!important}body.proto-ui.theme-solarized{--primary-orange:#2aa198!important;--primary-orange-rgb:42,161,152!important;--accent-orange:#268bd2!important;--light-text:#839496!important;--gray-text:#586e75!important;--cursor-bg:rgba(42,161,152,.15)!important;--cursor-border:rgba(42,161,152,.5)!important;--cursor-hover-bg:rgba(42,161,152,.25)!important;--cursor-hover-border:rgba(38,139,210,.8)!important;--proto-tint-rgb:42,161,152!important}body.proto-ui.theme-purple-haze{--primary-orange:#9b59b6!important;--primary-orange-rgb:155,89,182!important;--accent-orange:#6c3483!important;--light-text:#e2e2e2!important;--gray-text:#8884d8!important;--cursor-bg:rgba(155,89,182,.15)!important;--cursor-border:rgba(155,89,182,.5)!important;--cursor-hover-bg:rgba(155,89,182,.25)!important;--cursor-hover-border:rgba(108,52,131,.8)!important;--proto-tint-rgb:155,89,182!important}body.proto-ui.theme-legacy-orange{--primary-orange:#c27c15!important;--primary-orange-rgb:194,124,21!important;--accent-orange:#e69500!important;--light-text:#f0f0f0!important;--gray-text:#b8a38b!important;--cursor-bg:rgba(194,124,21,.15)!important;--cursor-border:rgba(194,124,21,.5)!important;--cursor-hover-bg:rgba(194,124,21,.25)!important;--cursor-hover-border:rgba(230,149,0,.8)!important;--proto-tint-rgb:194,124,21!important}body.proto-ui.gridflow-background-active #background-root{background:radial-gradient(circle at 50% 24%,rgba(var(--proto-tint-rgb),.12) 0,rgba(var(--proto-tint-rgb),.028) 30%,transparent 56%),linear-gradient(180deg,rgba(7,10,14,.96),rgba(3,5,8,.99))!important}body.proto-ui.gridflow-background-active #background-glow{opacity:.06!important}body.proto-ui #matrix-bg,body.proto-ui #paths-layer,body.proto-ui #starfield-layer{filter:saturate(1.34) brightness(1.14) contrast(1.16)!important}body.proto-ui .home-logo,body.proto-ui .logo{filter:brightness(1.02) contrast(1.01) drop-shadow(0 0 18px rgba(var(--proto-tint-rgb),.16))!important}body.proto-ui #account-section .modal-body,body.proto-ui #account-section .modal-header,body.proto-ui #admin-section .modal-body,body.proto-ui #admin-section .modal-header,body.proto-ui #chat-section .chat-message-list,body.proto-ui #chat-section .chat-sidebar-scroll,body.proto-ui #chat-section .chat-sidebar-top,body.proto-ui #info-section .info-hero-copy,body.proto-ui #settings-section .modal-body,body.proto-ui #settings-section .settings-docs-content,body.proto-ui #settings-section .settings-group-body,body.proto-ui .account-grid,body.proto-ui .admin-grid,body.proto-ui .community-header,body.proto-ui .community-header-simple,body.proto-ui .top-nav-actions,body.proto-ui .top-right-cluster{background:transparent!important;border:0!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}body.proto-ui #account-section .account-shell,body.proto-ui #account-section .modal-content,body.proto-ui #account-section .setting-item,body.proto-ui #admin-section .admin-shell,body.proto-ui #admin-section .modal-content,body.proto-ui #admin-section .setting-item,body.proto-ui #all-lessons .lessons-header,body.proto-ui #all-lessons .search-container,body.proto-ui #all-lessons .sorter-wrapper,body.proto-ui #chat-section .chat-app-shell,body.proto-ui #chat-section .chat-composer,body.proto-ui #chat-section .chat-lock-card,body.proto-ui #chat-section .chat-main-card,body.proto-ui #chat-section .chat-modal-card,body.proto-ui #chat-section .chat-room-panel,body.proto-ui #chat-section .chat-room-top,body.proto-ui #chat-section .chat-sidebar-card,body.proto-ui #home-section .home-carousel,body.proto-ui #home-section .home-hero,body.proto-ui #home-section .home-popular-wrap,body.proto-ui #home-section .home-stats-row,body.proto-ui #info-section .info-hero,body.proto-ui #info-section .info-social-link,body.proto-ui #info-section .info-socials-panel,body.proto-ui #info-section .partner-card,body.proto-ui #settings-section .modal-content,body.proto-ui #settings-section .setting-item,body.proto-ui #settings-section .settings-docs-intro,body.proto-ui #settings-section .settings-docs-layout,body.proto-ui #settings-section .settings-docs-nav,body.proto-ui #settings-section .settings-docs-nav-button,body.proto-ui #settings-section .settings-group,body.proto-ui #settings-section .settings-shell,body.proto-ui .info-section-heading,body.proto-ui .live-counter,body.proto-ui .nav-tab,body.proto-ui .nav-tabs,body.proto-ui .top-bar{background:var(--proto-panel-bg)!important;border:1px solid var(--proto-border)!important;box-shadow:var(--proto-shadow)!important;-webkit-backdrop-filter:blur(20px) saturate(130%)!important;backdrop-filter:blur(20px) saturate(130%)!important}body.proto-ui #account-section .modal-content,body.proto-ui #admin-section .modal-content,body.proto-ui #chat-section .chat-app-shell,body.proto-ui #home-section .home-hero,body.proto-ui #info-section .info-hero,body.proto-ui #settings-section .modal-content{background:var(--proto-panel-bg-strong)!important;border-color:var(--proto-border-strong)!important}body.proto-ui #chat-section .chat-mode-tab,body.proto-ui #chat-section .chat-mode-tab.is-active,body.proto-ui #chat-section .chat-mode-tab:hover,body.proto-ui #settings-section .settings-docs-nav-button,body.proto-ui #settings-section .settings-docs-nav-button.active,body.proto-ui #settings-section .settings-docs-nav-button:hover,body.proto-ui .nav-tab,body.proto-ui .nav-tab.active,body.proto-ui .nav-tab:hover{background:var(--proto-chip-bg)!important;border:1px solid hsla(0,0%,100%,.09)!important;box-shadow:var(--proto-shadow-soft)!important;color:hsla(0,0%,100%,.9)!important}body.proto-ui #chat-section .chat-mode-tab.is-active,body.proto-ui #settings-section .settings-docs-nav-button.active,body.proto-ui .nav-tab.active{border-color:hsla(0,0%,100%,.16)!important;color:#fff!important}body.proto-ui .chat-room-title i,body.proto-ui .community-title i,body.proto-ui .info-social-link i,body.proto-ui .modal-title i,body.proto-ui .nav-tab i,body.proto-ui .nav-tab.active i,body.proto-ui .nav-tab:hover i,body.proto-ui .setting-label i,body.proto-ui .settings-docs-nav-button i,body.proto-ui .settings-docs-nav-button.active i,body.proto-ui .settings-docs-nav-button:hover i{color:hsla(0,0%,100%,.92)!important}body.proto-ui #all-lessons .lessons-header h2,body.proto-ui .chat-room-title,body.proto-ui .community-kicker,body.proto-ui .community-title,body.proto-ui .home-popular-wrap h2,body.proto-ui .home-stat-number,body.proto-ui .info-hero-copy h2,body.proto-ui .info-section-heading,body.proto-ui .live-counter-label,body.proto-ui .live-counter-value,body.proto-ui .modal-title,body.proto-ui .nav-tab,body.proto-ui .nav-tab span,body.proto-ui .partner-title,body.proto-ui .setting-label{color:hsla(0,0%,100%,.96)!important;text-shadow:none!important;-webkit-text-fill-color:hsla(0,0%,100%,.96)!important}body.proto-ui .chat-room-subtitle,body.proto-ui .home-subtitle,body.proto-ui .info-hero-copy p,body.proto-ui .info-social-link span,body.proto-ui .live-counter-label,body.proto-ui .partner-desc,body.proto-ui .setting-description,body.proto-ui .settings-docs-intro p{color:hsla(0,0%,100%,.64)!important}body.proto-ui #account-section .setting-item:after,body.proto-ui #account-section .setting-item:before,body.proto-ui #admin-section .setting-item:after,body.proto-ui #admin-section .setting-item:before,body.proto-ui #settings-section .setting-item:after,body.proto-ui #settings-section .setting-item:before,body.proto-ui #settings-section .settings-group:after,body.proto-ui #settings-section .settings-group:before,body.proto-ui .chat-main-card:before,body.proto-ui .chat-modal-card:before,body.proto-ui .chat-sidebar-card:before,body.proto-ui .home-carousel-card:after,body.proto-ui .home-carousel-card:before,body.proto-ui .home-carousel:after,body.proto-ui .home-carousel:before,body.proto-ui .lesson-card:after,body.proto-ui .lesson-card:before,body.proto-ui .partner-card:after,body.proto-ui .partner-card:before,body.proto-ui .settings-shell:after,body.proto-ui .settings-shell:before{content:none!important;display:none!important;background:none!important;background-image:none!important;box-shadow:none!important;opacity:0!important}body.proto-ui .nav-tabs,body.proto-ui .top-bar,body.proto-ui .top-nav-actions,body.proto-ui .top-right-cluster{background:transparent!important;border:0!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}body.proto-ui .top-bar{background:var(--proto-panel-bg-strong)!important;border:1px solid var(--proto-border-strong)!important;box-shadow:var(--proto-shadow)!important;-webkit-backdrop-filter:blur(18px) saturate(126%)!important;backdrop-filter:blur(18px) saturate(126%)!important}body.proto-ui .live-counter,body.proto-ui .nav-tab,body.proto-ui .nav-tab.active,body.proto-ui .nav-tab:hover{background:transparent!important;border:1px solid transparent!important;box-shadow:none!important;-webkit-backdrop-filter:blur(16px) saturate(126%)!important;backdrop-filter:blur(16px) saturate(126%)!important}body.proto-ui .live-counter,body.proto-ui .nav-tab.active{background:var(--proto-chip-bg)!important;border-color:hsla(0,0%,100%,.1)!important;box-shadow:var(--proto-shadow-soft)!important}body.proto-ui #account-section .modal-content,body.proto-ui #admin-section .modal-content,body.proto-ui #chat-section .chat-app-shell,body.proto-ui #home-section .home-hero,body.proto-ui #home-section .home-logo-wrap,body.proto-ui #home-section .home-popular-wrap,body.proto-ui #info-section .info-hero,body.proto-ui #settings-section .modal-content,body.proto-ui #settings-section .settings-docs-layout,body.proto-ui #settings-section .settings-shell{background:transparent!important;border:0!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}body.proto-ui .home-carousel:after,body.proto-ui .home-carousel:before,body.proto-ui .home-logo-shine,body.proto-ui .home-logo-wrap:after{content:none!important;display:none!important;background:none!important}body.proto-ui #account-section .setting-item,body.proto-ui #admin-section .setting-item,body.proto-ui #all-lessons .lessons-header,body.proto-ui #all-lessons .search-container,body.proto-ui #all-lessons .sorter-wrapper,body.proto-ui #chat-section .chat-composer,body.proto-ui #chat-section .chat-lock-card,body.proto-ui #chat-section .chat-main-card,body.proto-ui #chat-section .chat-modal-card,body.proto-ui #chat-section .chat-room-top,body.proto-ui #chat-section .chat-sidebar-card,body.proto-ui #home-section .home-carousel,body.proto-ui #home-section .home-stats-row,body.proto-ui #info-section .info-social-link,body.proto-ui #info-section .info-socials-panel,body.proto-ui #info-section .partner-card,body.proto-ui #settings-section .setting-item,body.proto-ui #settings-section .settings-docs-intro,body.proto-ui #settings-section .settings-docs-nav,body.proto-ui #settings-section .settings-group{background:var(--proto-panel-bg)!important;border:1px solid var(--proto-border)!important;box-shadow:var(--proto-shadow)!important;-webkit-backdrop-filter:blur(18px) saturate(126%)!important;backdrop-filter:blur(18px) saturate(126%)!important}body.proto-ui #all-lessons .lessons-header,body.proto-ui #all-lessons .search-container,body.proto-ui #all-lessons .sorter-wrapper,body.proto-ui #home-section .home-stats-row{background:transparent!important;border:0!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}body.proto-ui #all-lessons .custom-arrow,body.proto-ui #all-lessons .search-icon,body.proto-ui #home-section .home-stat-divider{display:none!important}body.proto-ui #all-lessons .lessons-header h2,body.proto-ui #home-section .home-stat-label,body.proto-ui #home-section .home-stat-number{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important}body.proto-ui #home-section .home-stats-row{display:grid!important;grid-template-columns:repeat(3,minmax(0,auto))!important;justify-content:center!important;gap:18px!important;margin-bottom:26px!important}body.proto-ui #all-lessons .custom-arrow,body.proto-ui #all-lessons .search-box,body.proto-ui #all-lessons .search-icon,body.proto-ui #all-lessons .sort-select,body.proto-ui #chat-section .chat-message-input,body.proto-ui #chat-section .chat-mode-tab,body.proto-ui #home-section .home-stat,body.proto-ui #home-section .home-stat-divider,body.proto-ui #settings-section .settings-docs-nav-button{background:transparent!important;border-color:transparent!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}body.proto-ui #all-lessons .search-box,body.proto-ui #all-lessons .sort-select{min-height:46px!important;padding:0 16px!important;border:1px solid hsla(0,0%,100%,.12)!important;border-radius:16px!important;font-size:.95rem!important;letter-spacing:.01em!important;background:hsla(0,0%,100%,.03)!important;box-shadow:var(--proto-shadow-soft)!important;-webkit-backdrop-filter:blur(16px) saturate(122%)!important;backdrop-filter:blur(16px) saturate(122%)!important}body.proto-ui #all-lessons .sort-select{width:min(240px,100%)!important}body.proto-ui #all-lessons .search-container,body.proto-ui #all-lessons .sorter-wrapper{display:flex!important;justify-content:center!important}body.proto-ui #all-lessons .search-box{width:min(540px,100%)!important}body.proto-ui #all-lessons .search-box::-moz-placeholder{color:hsla(0,0%,100%,.68)!important}body.proto-ui #all-lessons .search-box::placeholder,body.proto-ui #all-lessons .sort-select,body.proto-ui #all-lessons .sort-select option{color:hsla(0,0%,100%,.68)!important}body.proto-ui #all-lessons .sort-select option,body.proto-ui #all-lessons .sort-select option:checked{background:#090c12!important}body.proto-ui .home-carousel-overlay,body.proto-ui .lesson-overlay{background:linear-gradient(180deg,rgba(5,8,14,.02),rgba(5,8,14,.1) 56%,rgba(5,8,14,.5))!important}body.proto-ui .home-carousel-title-wrap,body.proto-ui .lesson-title-wrap{left:14px!important;right:14px!important;bottom:14px!important;width:auto!important;padding:0!important;transform:none!important}body.proto-ui .home-carousel-card:hover .home-carousel-title-wrap,body.proto-ui .lesson-card:hover .lesson-title-wrap{transform:none!important}body.proto-ui .lesson-card[data-random-game=true] .lesson-title-wrap,body.proto-ui .lesson-card[data-random-game=true]:hover .lesson-title-wrap{opacity:1!important;transform:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;filter:none!important}body.proto-ui .lesson-card[data-random-game=true]:hover .lesson-image{filter:none!important;transform:none!important}body.proto-ui .home-carousel-title,body.proto-ui .lesson-title{display:block!important;width:100%!important;max-width:none!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;text-shadow:0 1px 12px rgba(0,0,0,.54)!important}body.proto-ui .home-carousel-image,body.proto-ui .lesson-image{opacity:1!important;visibility:visible!important;filter:none!important}body.proto-ui #info-section .info-hero-copy{max-width:44rem!important;text-align:left!important}body.proto-ui #info-section .info-hero-copy p,body.proto-ui #info-section .partner-desc{max-width:52ch!important}body.proto-ui .info-eyebrow,body.proto-ui .info-section-heading{display:none!important}body.proto-ui .info-partners-title,body.proto-ui .info-title-plain{margin:0!important;padding:0!important;color:hsla(0,0%,100%,.96)!important;text-transform:uppercase!important;letter-spacing:.12em!important;font-weight:800!important;background:transparent!important;border:0!important;box-shadow:none!important;text-shadow:none!important}body.proto-ui .info-title-plain{font-size:clamp(1.3rem,2vw,1.9rem)!important}body.proto-ui .info-partners-title{margin:14px 0 18px!important;font-size:.92rem!important}body.proto-ui #account-section .setting-item,body.proto-ui #admin-section .setting-item,body.proto-ui #chat-section .chat-composer,body.proto-ui #chat-section .chat-lock-card,body.proto-ui #chat-section .chat-main-card,body.proto-ui #chat-section .chat-modal-card,body.proto-ui #chat-section .chat-room-top,body.proto-ui #chat-section .chat-sidebar-card,body.proto-ui #info-section .info-socials-panel,body.proto-ui #info-section .partner-card,body.proto-ui #settings-section .setting-item{background:var(--proto-chip-bg)!important;box-shadow:var(--proto-shadow-soft)!important}body.proto-ui .account-avatar-preview,body.proto-ui .account-feedback,body.proto-ui .account-form,body.proto-ui .account-status-chip,body.proto-ui .admin-inline-actions,body.proto-ui .admin-report-toolbar,body.proto-ui .background-options,body.proto-ui .file-upload-container,body.proto-ui .logo-preview,body.proto-ui .settings-docs-intro,body.proto-ui .theme-preview,body.proto-ui .toggle-switch{background:transparent!important;border:0!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}body.proto-ui .account-auth-grid,body.proto-ui .account-danger-actions,body.proto-ui .account-profile-row,body.proto-ui .account-status-panel,body.proto-ui .admin-inline-actions,body.proto-ui .admin-report-toolbar{background:transparent!important;border:0!important;box-shadow:none!important}body.proto-ui #account-section,body.proto-ui #chat-section,body.proto-ui #settings-section{padding:24px 20px 42px!important}body.proto-ui #chat-section .chat-app-shell{grid-template-columns:380px minmax(0,1fr)!important;min-height:calc(100vh - 190px)!important}body.proto-ui #account-section .account-grid,body.proto-ui #admin-section .admin-grid{grid-template-columns:repeat(auto-fit,minmax(420px,1fr))!important;gap:22px!important}body.proto-ui #account-section .modal-content,body.proto-ui #admin-section .modal-content{max-width:none!important}body.proto-ui #account-section .account-avatar-preview,body.proto-ui #account-section .account-feedback,body.proto-ui #account-section .account-form,body.proto-ui #account-section .account-profile-row,body.proto-ui #account-section .account-status-chip,body.proto-ui #chat-section .chat-app-lock,body.proto-ui #chat-section .chat-composer,body.proto-ui #chat-section .chat-lock-card{font-family:inherit!important}body.proto-ui #settings-section .settings-docs-layout{display:grid!important;grid-template-columns:230px minmax(0,1fr)!important}body.proto-ui #settings-section .settings-docs-nav{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}body.proto-ui #settings-section .modal-body{padding:0!important}body.proto-ui #settings-section .settings-docs-content{display:flex!important;flex-direction:column!important;gap:16px!important;min-width:0!important}body.proto-ui #settings-section .settings-docs-intro,body.proto-ui #settings-section .settings-docs-nav-button,body.proto-ui #settings-section .settings-group{background:var(--proto-panel-bg)!important;border:1px solid var(--proto-border)!important;box-shadow:var(--proto-shadow-soft)!important;-webkit-backdrop-filter:blur(16px) saturate(124%)!important;backdrop-filter:blur(16px) saturate(124%)!important}body.proto-ui #settings-section .settings-docs-nav-button{margin-bottom:8px!important}body.proto-ui #settings-section .settings-docs-content,body.proto-ui #settings-section .settings-docs-layout{background:transparent!important;border:0!important;box-shadow:none!important}body.proto-ui .site-footer{display:flex!important;justify-content:space-between!important;align-items:flex-start!important;gap:24px!important;margin-top:48px!important;padding:22px 0!important;border-top:1px solid hsla(0,0%,100%,.12)!important;background:rgba(12,16,24,.88)!important}body.proto-ui .site-footer-left,body.proto-ui .site-footer-right{display:flex!important;gap:10px 18px!important}body.proto-ui .site-footer-left{flex-direction:column!important;justify-content:flex-start!important;align-items:flex-start!important}body.proto-ui .site-footer p{margin:0!important}body.proto-ui .site-footer-link{display:inline-flex!important;align-items:center!important;gap:8px!important;color:hsla(0,0%,100%,.92)!important;text-decoration:none!important}body.proto-ui .site-footer-left .site-footer-link{text-underline-offset:3px!important}body.proto-ui .site-footer-icon{justify-content:center!important;width:42px!important;height:42px!important;border-radius:999px!important;background:hsla(0,0%,100%,.03)!important;border:1px solid hsla(0,0%,100%,.12)!important;box-shadow:var(--proto-shadow-soft)!important}body.proto-ui .site-footer-icon i{font-size:1.18rem!important}@media (max-width:900px){body.proto-ui #settings-section .settings-docs-layout{grid-template-columns:1fr!important;gap:18px!important}body.proto-ui .site-footer{flex-direction:column!important}body.proto-ui .site-footer-right{justify-content:flex-start!important}}body.proto-ui #background-root{background:radial-gradient(circle at 50% 18%,hsla(0,0%,100%,.035) 0,transparent 36%),linear-gradient(180deg,rgba(7,8,10,.985),rgba(5,6,8,.99))!important}body.proto-ui #background-root:before{content:""!important;position:absolute!important;inset:-144px!important;background:linear-gradient(hsla(0,0%,100%,.068) 1px,transparent 0),linear-gradient(90deg,hsla(0,0%,100%,.068) 1px,transparent 0)!important;background-size:106px 106px!important;background-position:0 0!important;opacity:.21!important;will-change:transform!important;transform:translate3d(var(--site-grid-x,0),var(--site-grid-y,0),0)!important}body.proto-ui #background-glow,body.proto-ui #background-root:after,body.proto-ui #background-vignette{background:none!important;box-shadow:none!important}body.proto-ui #background-root:after{content:none!important;display:none!important;opacity:0!important}body.proto-ui #background-glow{opacity:.035!important}body.proto-ui #background-glow,body.proto-ui #background-vignette,body.proto-ui #matrix-bg,body.proto-ui #paths-layer,body.proto-ui #starfield-layer{display:block!important;visibility:visible!important}body.proto-ui .account-field span,body.proto-ui .account-form-title,body.proto-ui .apply-btn,body.proto-ui .community-btn,body.proto-ui .file-btn,body.proto-ui .modal-title,body.proto-ui .setting-description,body.proto-ui .setting-label,body.proto-ui .site-footer,body.proto-ui .site-footer a,body.proto-ui .site-footer p,body.proto-ui button,body.proto-ui input,body.proto-ui label,body.proto-ui select,body.proto-ui textarea{font-family:inherit!important;letter-spacing:normal!important}body.proto-ui i.fa-solid,body.proto-ui i.fas{font-family:Font Awesome\ 6 Free!important;font-style:normal!important;font-weight:900!important}body.proto-ui i.fa-brands,body.proto-ui i.fab{font-family:Font Awesome\ 6 Brands!important;font-style:normal!important;font-weight:400!important}body.proto-ui .top-bar{background:linear-gradient(160deg,hsla(0,0%,100%,.045),hsla(0,0%,100%,.016))!important;border:1px solid hsla(0,0%,100%,.12)!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.1),0 12px 28px rgba(0,0,0,.1)!important;-webkit-backdrop-filter:blur(18px) saturate(122%)!important;backdrop-filter:blur(18px) saturate(122%)!important}body.proto-ui .nav-tabs,body.proto-ui .top-nav-actions,body.proto-ui .top-right-cluster{background:transparent!important;border:0!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}body.proto-ui .live-counter,body.proto-ui .nav-tab.active{background:hsla(0,0%,100%,.082)!important;border:1px solid hsla(0,0%,100%,.12)!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.08)!important}body.proto-ui #account-section .account-shell,body.proto-ui #account-section .modal-content,body.proto-ui #admin-section .admin-shell,body.proto-ui #admin-section .modal-content,body.proto-ui #all-lessons .lessons-header,body.proto-ui #all-lessons .search-container,body.proto-ui #all-lessons .sorter-wrapper,body.proto-ui #home-section .home-popular-wrap,body.proto-ui #home-section .home-stats-row,body.proto-ui #info-section .info-hero,body.proto-ui #info-section .info-socials-panel,body.proto-ui #info-section .partners-grid,body.proto-ui #settings-section .modal-body,body.proto-ui #settings-section .modal-content,body.proto-ui #settings-section .settings-docs-content,body.proto-ui #settings-section .settings-docs-layout,body.proto-ui #settings-section .settings-shell{background:transparent!important;border:0!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}body.proto-ui #all-lessons .custom-arrow,body.proto-ui #all-lessons .search-container:after,body.proto-ui #all-lessons .search-container:before,body.proto-ui #all-lessons .search-icon,body.proto-ui #all-lessons .sorter-wrapper:after,body.proto-ui #all-lessons .sorter-wrapper:before,body.proto-ui #home-section .home-stat-divider{display:none!important}body.proto-ui #home-section .home-stats-row{margin-bottom:20px!important;gap:12px!important}body.proto-ui #home-section .home-stat{background:transparent!important;border:0!important;box-shadow:none!important;min-width:0!important;padding:0!important}body.proto-ui #all-lessons .lessons-header{display:flex!important;align-items:baseline!important;justify-content:center!important;gap:10px!important;margin-bottom:16px!important}body.proto-ui #all-lessons .lessons-header h2{font-size:clamp(1.5rem,2.3vw,2.15rem)!important;font-weight:800!important;text-transform:none!important;letter-spacing:.01em!important}body.proto-ui #all-lessons .lessons-game-count,body.proto-ui #all-lessons .search-stats{color:hsla(0,0%,100%,.6)!important;text-align:center!important}body.proto-ui #all-lessons .search-stats{max-width:52ch!important;margin:8px auto 0!important}body.proto-ui #all-lessons .search-container,body.proto-ui #all-lessons .sorter-wrapper{max-width:620px!important;margin-left:auto!important;margin-right:auto!important}body.proto-ui #all-lessons .sorter-wrapper{max-width:240px!important;margin-top:14px!important}body.proto-ui #all-lessons .search-box,body.proto-ui #all-lessons .sort-select{width:100%!important;min-height:52px!important;padding:0 18px!important;border-radius:17px!important;border:1px solid hsla(0,0%,100%,.14)!important;background:linear-gradient(160deg,hsla(0,0%,100%,.05),hsla(0,0%,100%,.016))!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.1),0 10px 20px rgba(0,0,0,.06)!important;color:hsla(0,0%,100%,.92)!important;outline:none!important;-moz-appearance:none!important;appearance:none!important;-webkit-appearance:none!important;text-transform:none!important;text-align:left!important}body.proto-ui #all-lessons .search-box::-moz-placeholder{color:hsla(0,0%,100%,.54)!important}body.proto-ui #all-lessons .search-box::placeholder{color:hsla(0,0%,100%,.54)!important}body.proto-ui #all-lessons .sort-select{text-align:center!important;-moz-text-align-last:center!important;text-align-last:center!important}body.proto-ui #all-lessons .sort-select option,body.proto-ui #all-lessons .sort-select option:checked{background:#0a0b0d!important;color:hsla(0,0%,100%,.92)!important}body.proto-ui .home-carousel-card,body.proto-ui .lesson-card{width:100%!important;overflow:hidden!important}body.proto-ui .home-carousel-image,body.proto-ui .lesson-image{height:100%!important;display:block!important}body.proto-ui .home-carousel-overlay,body.proto-ui .lesson-overlay{background:linear-gradient(180deg,rgba(4,5,8,0) 32%,rgba(4,5,8,.12) 56%,rgba(4,5,8,.6))!important}body.proto-ui .home-carousel-desc,body.proto-ui .lesson-desc{display:none!important}body.proto-ui .home-carousel-title-wrap,body.proto-ui .lesson-title-wrap{inset:auto 0 0 0!important;width:100%!important;padding:0 18px 18px!important}body.proto-ui .home-carousel-title,body.proto-ui .lesson-title{font-size:clamp(1.02rem,1.34vw,1.2rem)!important;line-height:1.16!important;text-align:center!important}body.proto-ui #info-section .info-hero-copy{max-width:48rem!important;margin:0 auto!important;text-align:center!important}body.proto-ui #info-section .info-hero-copy p{margin-left:auto!important;margin-right:auto!important}body.proto-ui .info-partners-title,body.proto-ui .info-title-plain{width:100%!important;text-align:center!important}body.proto-ui #info-section .info-socials-panel{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))!important;gap:14px!important}body.proto-ui #info-section .info-social-link{background:hsla(0,0%,100%,.032)!important;border:1px solid hsla(0,0%,100%,.1)!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.08)!important;-webkit-backdrop-filter:blur(16px) saturate(122%)!important;backdrop-filter:blur(16px) saturate(122%)!important}body.proto-ui #account-section,body.proto-ui #chat-section,body.proto-ui #settings-section{padding:30px clamp(18px,3vw,50px) 56px!important}body.proto-ui #account-section .account-grid,body.proto-ui #admin-section .admin-grid{grid-template-columns:repeat(auto-fit,minmax(460px,1fr))!important;gap:24px!important}body.proto-ui #account-section .setting-item,body.proto-ui #admin-section .setting-item,body.proto-ui #chat-section .chat-composer,body.proto-ui #chat-section .chat-lock-card,body.proto-ui #chat-section .chat-main-card,body.proto-ui #chat-section .chat-room-top,body.proto-ui #chat-section .chat-sidebar-card{background:linear-gradient(160deg,hsla(0,0%,100%,.045),hsla(0,0%,100%,.014))!important;border:1px solid hsla(0,0%,100%,.11)!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.08),0 10px 22px rgba(0,0,0,.06)!important;-webkit-backdrop-filter:blur(18px) saturate(124%)!important;backdrop-filter:blur(18px) saturate(124%)!important}body.proto-ui #account-section .account-avatar-preview,body.proto-ui #account-section .account-danger-actions,body.proto-ui #account-section .account-feedback,body.proto-ui #account-section .account-form,body.proto-ui #account-section .account-profile-row,body.proto-ui #account-section .account-status-chip,body.proto-ui #account-section .account-status-panel{background:transparent!important;border:0!important;box-shadow:none!important}body.proto-ui #chat-section .chat-app-shell{width:min(1640px,100%)!important;margin:0 auto!important;grid-template-columns:400px minmax(0,1fr)!important;min-height:calc(100vh - 154px)!important;overflow:visible!important}body.proto-ui #chat-section .chat-main-card{min-height:calc(100vh - 176px)!important}body.proto-ui #settings-section .modal-body,body.proto-ui #settings-section .modal-content,body.proto-ui #settings-section .settings-docs-content,body.proto-ui #settings-section .settings-docs-layout,body.proto-ui #settings-section .settings-shell{background:transparent!important;border:0!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}body.proto-ui #settings-section .settings-docs-layout{grid-template-columns:250px minmax(0,1fr)!important;gap:0 28px!important}body.proto-ui #settings-section .settings-docs-nav{top:22px!important;border-radius:28px!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.08),0 14px 28px rgba(0,0,0,.06)!important;-webkit-backdrop-filter:blur(18px) saturate(122%)!important;backdrop-filter:blur(18px) saturate(122%)!important}body.proto-ui #settings-section .settings-docs-intro{padding:0 0 6px!important;background:transparent!important;border:0!important;box-shadow:none!important}body.proto-ui #settings-section .settings-docs-intro-eyebrow{display:none!important}body.proto-ui #settings-section .settings-docs-nav-button{width:100%!important;margin:0 0 8px!important;padding:14px 16px!important;border:0!important;border-radius:18px!important;background:transparent!important;box-shadow:none!important;justify-content:flex-start!important;color:hsla(0,0%,100%,.72)!important}body.proto-ui #settings-section .settings-docs-nav-button.active{background:hsla(0,0%,100%,.92)!important;color:#0b0d10!important}body.proto-ui #settings-section .settings-docs-nav-button.active i,body.proto-ui #settings-section .settings-docs-nav-button.active span{color:#0b0d10!important;-webkit-text-fill-color:#0b0d10!important}body.proto-ui #settings-section .settings-group{background:linear-gradient(160deg,hsla(0,0%,100%,.04),hsla(0,0%,100%,.014))!important;border:1px solid hsla(0,0%,100%,.11)!important;border-radius:28px!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.08),0 10px 22px rgba(0,0,0,.05)!important}body.proto-ui #settings-section .background-options,body.proto-ui #settings-section .file-upload-container,body.proto-ui #settings-section .logo-preview,body.proto-ui #settings-section .setting-item,body.proto-ui #settings-section .theme-preview,body.proto-ui #settings-section .toggle-switch{background:transparent!important;border:0!important;box-shadow:none!important}body.proto-ui .site-footer{display:grid!important;align-items:end!important;gap:20px 28px!important;margin-top:56px!important;padding:24px 28px!important;border-top:1px solid hsla(0,0%,100%,.1)!important;background:rgba(7,9,11,.96)!important;color:hsla(0,0%,100%,.72)!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}body.proto-ui .site-footer-left{display:block!important;max-width:60ch!important}body.proto-ui .site-footer-left p{display:block!important;margin:0 0 6px!important;line-height:1.5!important;white-space:normal!important}body.proto-ui .site-footer-right{display:flex!important;justify-content:flex-end!important;align-items:center!important;flex-wrap:wrap!important;gap:12px!important}body.proto-ui .site-footer-link{white-space:nowrap!important}body.proto-ui .site-footer-left .site-footer-link{text-decoration:underline!important;text-underline-offset:.2em!important}body.proto-ui .site-footer-icon{width:54px!important;height:54px!important;border:0!important;background:transparent!important;box-shadow:none!important}body.proto-ui .site-footer-icon i{font-size:1.52rem!important;color:hsla(0,0%,100%,.96)!important}@media (max-width:900px){body.proto-ui #chat-section .chat-app-shell{grid-template-columns:1fr!important;min-height:auto!important}body.proto-ui .site-footer{grid-template-columns:1fr!important;align-items:start!important}body.proto-ui .site-footer-right{justify-content:flex-start!important}}body.proto-ui #background-root:before{inset:-220px!important;opacity:.31!important}body.proto-ui #account-section .modal-header,body.proto-ui #settings-section .modal-header,body.proto-ui .info-title-plain{display:none!important}body.proto-ui #info-section .info-hero-copy{max-width:56rem!important;padding-top:8px!important}body.proto-ui #account-section .account-shell,body.proto-ui #settings-section .settings-shell{width:min(1760px,calc(100vw - 56px))!important;margin-left:calc(50% - 50vw + 28px)!important;margin-right:calc(50% - 50vw + 28px)!important}body.proto-ui #settings-section .settings-docs-content{background:linear-gradient(180deg,rgba(6,7,9,.82),rgba(6,7,9,.72))!important;border-radius:32px!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.08),0 16px 30px rgba(0,0,0,.08)!important;padding:22px 22px 14px!important}body.proto-ui #settings-section .settings-docs-nav{width:264px!important;min-width:264px!important}body.proto-ui #settings-section .settings-button-row,body.proto-ui #settings-section .settings-group-body,body.proto-ui #settings-section .settings-group-header{border:0!important;box-shadow:none!important}body.chat-active #main-container{height:auto!important;overflow:visible!important;display:block!important}body.chat-active #backToTop,body.chat-active footer{display:block!important}body.chat-active #chat-section,body.proto-ui #chat-section{max-width:none!important;width:auto!important;zoom:1!important;padding:18px 0 56px!important}body.chat-active #chat-section .chat-app-shell,body.proto-ui #chat-section .chat-app-shell{width:min(1820px,calc(100vw - 48px))!important;margin-left:calc(50% - 50vw + 24px)!important;margin-right:calc(50% - 50vw + 24px)!important;min-height:calc(100vh - 118px)!important;grid-template-columns:420px minmax(0,1fr)!important}body.chat-active #chat-section .chat-main-card,body.chat-active #chat-section .chat-sidebar-card,body.proto-ui #chat-section .chat-main-card,body.proto-ui #chat-section .chat-sidebar-card{min-height:calc(100vh - 154px)!important}body.proto-ui #chat-section .chat-room-top-actions{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:10px!important;flex-wrap:wrap!important}body.proto-ui #chatRoomActions{display:flex!important;align-items:center!important;gap:8px!important;flex-wrap:wrap!important}body.proto-ui .chat-fullscreen-button{display:none!important;min-height:42px!important;padding:0 14px!important}body.proto-ui #chatAppShell{position:relative!important}body.proto-ui.chat-requires-fullscreen #chatAppShell>*{filter:blur(7px) saturate(.9)!important}body.proto-ui .chat-fullscreen-gate{position:fixed!important;inset:0!important;z-index:1400!important;display:none!important;align-items:center!important;justify-content:center!important;padding:28px!important;background:rgba(5,8,12,.38)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;pointer-events:none!important}body.proto-ui.chat-requires-fullscreen .chat-fullscreen-gate.is-active{display:flex!important}body.proto-ui .chat-fullscreen-gate-card{width:min(440px,100%)!important;padding:26px 24px!important;border-radius:26px!important;border:1px solid rgba(var(--proto-tint-rgb),.18)!important;background:linear-gradient(160deg,rgba(10,14,18,.92),rgba(8,10,14,.86))!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.08),0 18px 48px rgba(0,0,0,.28),0 0 24px rgba(var(--proto-tint-rgb),.1)!important;text-align:center!important;pointer-events:auto!important}body.proto-ui .chat-fullscreen-gate-title{color:hsla(0,0%,100%,.97)!important;font-size:1.35rem!important;font-weight:700!important;letter-spacing:.01em!important}body.proto-ui .chat-fullscreen-gate-copy{margin:10px 0 18px!important;color:hsla(0,0%,100%,.7)!important;line-height:1.5!important}body.proto-ui .chat-fullscreen-gate-button{min-height:46px!important;min-width:200px!important;justify-content:center!important;gap:10px!important}body.proto-ui #accountStatusCard .account-status-detail,body.proto-ui #accountStatusCard .setting-description{display:none!important}body.proto-ui,body.proto-ui *{cursor:auto!important}body.proto-ui [role=button],body.proto-ui a,body.proto-ui button,body.proto-ui label,body.proto-ui select,body.proto-ui summary{cursor:pointer!important}body.proto-ui input,body.proto-ui textarea{cursor:text!important}body.proto-ui #chatAppShell.is-fullscreen{background:rgba(7,8,10,.92)!important;padding:18px!important}body.proto-ui #allLessonsGrid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:18px!important}body.proto-ui .home-carousel-card{min-height:290px!important}body.proto-ui .site-footer{grid-template-columns:1fr auto!important;gap:12px 22px!important;padding:14px 18px!important;border:1px solid hsla(0,0%,100%,.1)!important;border-radius:22px!important;background:rgba(8,10,12,.98)!important}body.proto-ui .site-footer-left{max-width:42ch!important}body.proto-ui .site-footer-left p{margin:0 0 2px!important;line-height:1.35!important}body.proto-ui .site-footer-right{gap:8px!important}body.proto-ui .site-footer-icon{width:48px!important;height:48px!important}body.proto-ui .site-footer-icon i{font-size:1.42rem!important}@media (max-width:1100px){body.proto-ui #allLessonsGrid{grid-template-columns:repeat(2,minmax(0,1fr))!important}body.chat-active #chat-section .chat-app-shell,body.proto-ui #chat-section .chat-app-shell{grid-template-columns:1fr!important}body.chat-active #chat-section .chat-app-shell,body.proto-ui #account-section .account-shell,body.proto-ui #chat-section .chat-app-shell,body.proto-ui #settings-section .settings-shell{width:calc(100vw - 28px)!important;margin-left:calc(50% - 50vw + 14px)!important;margin-right:calc(50% - 50vw + 14px)!important}body.proto-ui #settings-section .settings-docs-nav{width:auto!important;min-width:0!important}}@media (max-width:700px){body.proto-ui #allLessonsGrid{grid-template-columns:1fr!important}}body.proto-ui #background-root{background:radial-gradient(circle at 50% 18%,hsla(0,0%,100%,.06) 0,transparent 38%),linear-gradient(180deg,rgba(12,13,16,.975),rgba(8,9,12,.985))!important}body.proto-ui #background-root:before{opacity:.38!important}body.proto-ui .home-carousel-card,body.proto-ui .lesson-card{min-height:232px!important;height:232px!important}body.proto-ui .home-carousel-image,body.proto-ui .lesson-image{width:100%!important;height:232px!important;min-height:232px!important;max-height:232px!important;-o-object-fit:cover!important;object-fit:cover!important;-o-object-position:center center!important;object-position:center center!important;aspect-ratio:auto!important}body.proto-ui #all-lessons .search-container,body.proto-ui #all-lessons .sorter-wrapper{position:relative!important}body.proto-ui #all-lessons .search-icon{display:flex!important;position:absolute!important;left:16px!important;top:50%!important;transform:translateY(-50%)!important;z-index:2!important;color:hsla(0,0%,100%,.58)!important;pointer-events:none!important}body.proto-ui #all-lessons .search-box{padding-left:46px!important}body.proto-ui #all-lessons .custom-arrow{display:flex!important;position:absolute!important;right:16px!important;top:50%!important;transform:translateY(-50%)!important;z-index:2!important;color:hsla(0,0%,100%,.6)!important;pointer-events:none!important}body.proto-ui #all-lessons .sort-select{padding-right:44px!important}body.chat-active,body.proto-ui.chat-active{overflow-y:auto!important;overflow-x:hidden!important}body.chat-active #chat-section,body.chat-active #chat-section .chat-app-shell,body.proto-ui #chat-section,body.proto-ui #chat-section .chat-app-shell,body.proto-ui #chat-section .chat-main-card,body.proto-ui #chat-section .chat-sidebar-card{overflow:visible!important}body.proto-ui .chat-fullscreen-button{display:inline-flex!important;position:relative!important;z-index:3!important}body.proto-ui #account-section .account-shell{width:min(1380px,calc(100vw - 40px))!important}body.proto-ui #accountAuthCard{background:transparent!important;border:0!important;box-shadow:none!important}body.proto-ui #accountAuthCard>.setting-description,body.proto-ui #accountAuthCard>.setting-label{display:none!important}body.proto-ui #account-section .account-auth-grid{display:grid!important;gap:18px!important}body.proto-ui #account-section .account-form{padding:20px!important;border-radius:24px!important;background:linear-gradient(160deg,hsla(0,0%,100%,.045),hsla(0,0%,100%,.014))!important;border:1px solid hsla(0,0%,100%,.12)!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.08),0 10px 22px rgba(0,0,0,.06)!important}body.proto-ui #account-section .account-form-title{margin-bottom:14px!important;font-size:1.05rem!important}body.proto-ui #settings-section .modal-body,body.proto-ui #settings-section .modal-content,body.proto-ui #settings-section .settings-docs-layout,body.proto-ui #settings-section .settings-shell{background:transparent!important;border:0!important;box-shadow:none!important}body.proto-ui #settings-section .settings-docs-layout{grid-template-columns:280px minmax(0,1fr)!important;gap:0 30px!important}body.proto-ui #settings-section .settings-docs-nav{grid-column:1/2!important;background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;width:auto!important;min-width:0!important}body.proto-ui #settings-section .settings-docs-content{grid-column:2/3!important}@media (max-width:980px){body.proto-ui #account-section .account-auth-grid{grid-template-columns:1fr!important}}body.proto-ui #background-root{background:radial-gradient(circle at 50% 18%,hsla(0,0%,100%,.085) 0,transparent 40%),linear-gradient(180deg,rgba(16,18,22,.97),rgba(10,12,16,.982))!important}body.proto-ui #background-root:before{opacity:.46!important}body.proto-ui .home-carousel-card,body.proto-ui .lesson-card{width:100%!important;margin-left:0!important;margin-right:0!important;min-height:0!important;height:auto!important;aspect-ratio:1.6/1!important}body.proto-ui .home-carousel-image,body.proto-ui .lesson-image{width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;-o-object-fit:cover!important;object-fit:cover!important;-o-object-position:center center!important;object-position:center center!important;background:transparent!important}body.proto-ui .home-carousel-card{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:24px!important}body.proto-ui .home-carousel-card:after,body.proto-ui .home-carousel-card:before{content:none!important;display:none!important}body.proto-ui .home-carousel-track{gap:18px!important}body.proto-ui #accountAuthCard{grid-column:1/-1!important;width:min(920px,100%)!important;max-width:920px!important;margin:0 auto!important}body.proto-ui #account-section .account-auth-grid{width:100%!important;gap:16px!important;align-items:start!important}body.proto-ui #account-section .account-form{box-sizing:border-box!important}body.proto-ui #chatRoomActions:empty{display:none!important}@media (max-width:1080px){body.proto-ui #accountAuthCard{width:100%!important;max-width:none!important}body.proto-ui #account-section .account-auth-grid{grid-template-columns:1fr!important}}body.proto-ui #account-section{padding:18px clamp(14px,2vw,24px) 40px!important}body.proto-ui #account-section .account-shell{width:min(1040px,calc(100vw - 28px))!important;margin-left:auto!important;margin-right:auto!important}body.proto-ui #account-section .account-grid{grid-template-columns:minmax(0,1fr)!important;gap:16px!important;max-width:980px!important;margin:0 auto!important}body.proto-ui #accountAuthCard{width:100%!important;max-width:none!important;margin:0!important}body.proto-ui #account-section .account-auth-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important;align-items:stretch!important}body.proto-ui #account-section .account-form{width:100%!important;min-width:0!important;max-width:100%!important;overflow:hidden!important;padding:18px!important}body.proto-ui #account-section .account-field{min-width:0!important}body.proto-ui #account-section .account-field span{overflow-wrap:anywhere!important}body.proto-ui #account-section .community-btn,body.proto-ui #account-section .text-input{width:100%!important;max-width:100%!important;box-sizing:border-box!important}@media (max-width:1200px){body.proto-ui #account-section .account-auth-grid{grid-template-columns:1fr!important}}body.proto-ui #settings-section.proto-shell{overflow:visible!important;background:transparent!important;border:0!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}body.proto-ui #settings-section.proto-shell:before{content:none!important;display:none!important}body.proto-ui #settings-section{padding-left:clamp(72px,7vw,112px)!important;padding-right:clamp(18px,3vw,32px)!important;overflow:visible!important}body.proto-ui #settings-section .modal-body,body.proto-ui #settings-section .modal-content,body.proto-ui #settings-section .settings-docs-layout,body.proto-ui #settings-section .settings-shell{overflow:visible!important}body.proto-ui #settings-section .settings-docs-layout{grid-template-columns:288px minmax(0,1fr)!important;gap:32px!important;align-items:start!important}body.proto-ui #settings-section .settings-docs-nav{position:sticky!important;top:18px!important;align-self:start!important;width:100%!important;max-width:288px!important;margin-left:-92px!important;z-index:2!important;padding:16px!important;border-radius:24px!important;background:linear-gradient(160deg,hsla(0,0%,100%,.05),hsla(0,0%,100%,.018))!important;border:1px solid hsla(0,0%,100%,.12)!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.08),0 10px 22px rgba(0,0,0,.08)!important;-webkit-backdrop-filter:blur(18px) saturate(124%)!important;backdrop-filter:blur(18px) saturate(124%)!important}body.proto-ui #settings-section .settings-docs-content{position:relative!important;z-index:1!important;padding:24px!important;border-radius:28px!important;background:linear-gradient(160deg,hsla(0,0%,100%,.04),hsla(0,0%,100%,.014))!important;border:1px solid hsla(0,0%,100%,.1)!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.06),0 12px 28px rgba(0,0,0,.08)!important;-webkit-backdrop-filter:blur(18px) saturate(122%)!important;backdrop-filter:blur(18px) saturate(122%)!important}body.proto-ui #settings-section .setting-import{padding-top:8px!important}body.proto-ui #settings-section .setting-import .setting-label{margin-bottom:6px!important}body.proto-ui #settings-section .setting-import #importFileContainer,body.proto-ui #settings-section .setting-import #settingsImportStatus,body.proto-ui #settings-section .setting-import .setting-description,body.proto-ui #settings-section .setting-import .settings-button-row{margin-top:6px!important}body.proto-ui #settings-section .background-options,body.proto-ui #settings-section .file-upload-container,body.proto-ui #settings-section .logo-preview,body.proto-ui #settings-section .setting-item,body.proto-ui #settings-section .settings-docs-intro,body.proto-ui #settings-section .settings-group,body.proto-ui #settings-section .theme-preview,body.proto-ui #settings-section .toggle-switch{background:transparent!important;border:0!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}@media (max-width:980px){body.proto-ui #settings-section{padding-left:18px!important;padding-right:18px!important}body.proto-ui #settings-section .settings-docs-layout{grid-template-columns:1fr!important;gap:16px!important}body.proto-ui #settings-section .settings-docs-nav{position:relative!important;top:auto!important;max-width:none!important;margin-left:0!important}}body.proto-ui.gridflow-background-active #background-root:before{background:linear-gradient(rgba(var(--proto-tint-rgb),.1) 1px,transparent 1px),linear-gradient(90deg,rgba(var(--proto-tint-rgb),.1) 1px,transparent 1px)!important}body.proto-ui:not(.gridflow-background-active) #background-root:before{opacity:0!important}body.proto-ui:not(.gridflow-background-active) #background-root{background:transparent!important}body.proto-ui.gridflow-background-active #background-glow{background:radial-gradient(circle at var(--chrome-mx) calc(var(--chrome-my) + 2vh),rgba(var(--proto-tint-rgb),.16) 0,rgba(var(--proto-tint-rgb),.035) 24%,transparent 48%),radial-gradient(circle at 50% 8%,rgba(var(--proto-tint-rgb),.05) 0,transparent 18%)!important}body.proto-ui #account-section .account-form,body.proto-ui #settings-section .settings-docs-content,body.proto-ui #settings-section .settings-docs-nav,body.proto-ui .live-counter,body.proto-ui .top-bar{border-color:rgba(var(--proto-tint-rgb),.18)!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.08),0 10px 24px rgba(0,0,0,.08),0 0 24px rgba(var(--proto-tint-rgb),.08)!important}body.proto-ui .nav-tabs{background:transparent!important;border:0!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}body.proto-ui .nav-tab,body.proto-ui .nav-tab:hover{background:transparent!important;border:1px solid transparent!important;box-shadow:none!important}body.proto-ui #settings-section .settings-docs-nav-button.active,body.proto-ui .background-option.active,body.proto-ui .live-counter,body.proto-ui .nav-tab.active,body.proto-ui .theme-option.active{background:linear-gradient(160deg,rgba(var(--proto-tint-rgb),.15),rgba(var(--proto-tint-rgb),.05))!important;border-color:rgba(var(--proto-tint-rgb),.22)!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.08),0 0 22px rgba(var(--proto-tint-rgb),.11)!important}body.proto-ui #settings-section .settings-docs-layout{gap:36px!important}body.proto-ui #settings-section .modal-body,body.proto-ui #settings-section .modal-content,body.proto-ui #settings-section .settings-shell{background:transparent!important;border:0!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}body.proto-ui #settings-section .settings-docs-nav{background:linear-gradient(160deg,rgba(var(--proto-tint-rgb),.075),rgba(var(--proto-tint-rgb),.02))!important}body.proto-ui #settings-section .settings-docs-content{background:linear-gradient(180deg,rgba(6,7,9,.84),rgba(6,7,9,.74))!important;border:1px solid rgba(var(--proto-tint-rgb),.18)!important}body.proto-ui #accountAuthCard,body.proto-ui #accountAuthCard:after,body.proto-ui #accountAuthCard:before{background:transparent!important;border:0!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;content:none!important}body.proto-ui #accountAuthCard{padding:0!important}body.proto-ui #account-section .account-auth-grid{background:transparent!important;border:0!important;box-shadow:none!important}body.proto-ui #account-section .account-form{background:linear-gradient(160deg,rgba(var(--proto-tint-rgb),.06),rgba(var(--proto-tint-rgb),.018))!important;border:1px solid rgba(var(--proto-tint-rgb),.16)!important;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.08),0 10px 22px rgba(0,0,0,.06),0 0 18px rgba(var(--proto-tint-rgb),.06)!important}body.proto-ui:not(.gridflow-background-active) #background-glow,body.proto-ui:not(.gridflow-background-active) #background-vignette,body.proto-ui:not(.gridflow-background-active) #matrix-bg,body.proto-ui:not(.gridflow-background-active) #paths-layer,body.proto-ui:not(.gridflow-background-active) #starfield-layer{display:block!important;visibility:visible!important}body.proto-ui.background-constellation #matrix-bg,body.proto-ui.background-language-rain #matrix-bg,body.proto-ui.background-matrix #matrix-bg,body.proto-ui.background-starfield #starfield-layer,body.proto-ui.background-topography #matrix-bg,body.proto-ui.background-topography #paths-layer{opacity:1!important}body.proto-ui.background-gridflow #matrix-bg,body.proto-ui.background-gridflow #paths-layer,body.proto-ui.background-gridflow #starfield-layer,body.proto-ui:not(.background-matrix):not(.background-language-rain):not(.background-topography):not(.background-constellation) #matrix-bg,body.proto-ui:not(.background-starfield) #starfield-layer,body.proto-ui:not(.background-topography) #paths-layer{opacity:0!important}body.proto-ui #account-section .setting-item.account-auth-card,body.proto-ui #account-section .setting-item.account-auth-card:after,body.proto-ui #account-section .setting-item.account-auth-card:before{background:transparent!important;border:0!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;content:none!important}body.proto-ui #account-section .setting-item.account-auth-card .account-feedback{background:transparent!important;border:0!important;box-shadow:none!important}body.proto-ui #account-section .setting-item.account-auth-card{padding:0!important;gap:0!important}body.proto-ui #account-section .account-auth-grid{gap:22px!important}body.proto-ui.gridflow-background-active #background-root{background:radial-gradient(circle at 50% 24%,rgba(var(--proto-tint-rgb),.22) 0,rgba(var(--proto-tint-rgb),.07) 34%,transparent 60%),linear-gradient(180deg,rgba(7,10,14,.94),rgba(3,5,8,.985))!important}body.proto-ui.gridflow-background-active #background-root:before{background:linear-gradient(rgba(var(--proto-tint-rgb),.18) 1px,transparent 1px),linear-gradient(90deg,rgba(var(--proto-tint-rgb),.18) 1px,transparent 1px)!important;opacity:.44!important}body.proto-ui.gridflow-background-active #background-glow{opacity:.16!important;background:radial-gradient(circle at var(--chrome-mx) calc(var(--chrome-my) + 2vh),rgba(var(--proto-tint-rgb),.28) 0,rgba(var(--proto-tint-rgb),.08) 22%,transparent 46%),radial-gradient(circle at 50% 8%,rgba(var(--proto-tint-rgb),.13) 0,transparent 20%)!important}body.proto-ui.background-language-rain #matrix-bg,body.proto-ui.background-matrix #matrix-bg{opacity:1!important;filter:saturate(1.7) brightness(1.26) contrast(1.24)!important}body.proto-ui.background-constellation #matrix-bg{opacity:1!important;filter:saturate(1.52) brightness(1.22) contrast(1.2)!important}body.proto-ui.background-constellation #paths-layer,body.proto-ui.background-constellation #starfield-layer{opacity:0!important}body.proto-ui.gridflow-background-active #background-root{background:radial-gradient(circle at 50% 22%,rgba(var(--proto-tint-rgb),.34) 0,rgba(var(--proto-tint-rgb),.11) 32%,transparent 62%),linear-gradient(180deg,rgba(7,10,14,.9),rgba(3,5,8,.98))!important}body.proto-ui.gridflow-background-active #background-root:before{background:linear-gradient(rgba(var(--proto-tint-rgb),.24) 1px,transparent 1px),linear-gradient(90deg,rgba(var(--proto-tint-rgb),.24) 1px,transparent 1px)!important;background-size:94px 94px!important;opacity:.62!important}body.proto-ui.gridflow-background-active #background-glow{display:block!important;visibility:visible!important;opacity:.26!important;background:radial-gradient(circle at var(--chrome-mx) calc(var(--chrome-my) + 2vh),rgba(var(--proto-tint-rgb),.34) 0,rgba(var(--proto-tint-rgb),.11) 24%,transparent 48%),radial-gradient(circle at 50% 10%,rgba(var(--proto-tint-rgb),.18) 0,transparent 24%)!important}body.proto-ui.background-constellation #background-root,body.proto-ui.background-language-rain #background-root,body.proto-ui.background-matrix #background-root{background:transparent!important}
+/* Monochrome lockdown overrides */
+body.proto-ui {
+  --primary-orange: #ffffff !important;
+  --primary-orange-rgb: 255, 255, 255 !important;
+  --accent-orange: #ffffff !important;
+  --light-text: #ffffff !important;
+  --gray-text: rgba(255, 255, 255, 0.72) !important;
+  background: #000000 !important;
+}
+
+body.proto-ui,
+body.proto-ui * {
+  cursor: auto !important;
+}
+
+body.proto-ui #background-root,
+body.proto-ui.background-none #background-root,
+body.proto-ui.background-matrix #background-root {
+  background: #000000 !important;
+  z-index: 0 !important;
+}
+
+body.proto-ui #background-root:before,
+body.proto-ui #background-root:after,
+body.proto-ui #background-glow,
+body.proto-ui #background-vignette,
+body.proto-ui #paths-layer,
+body.proto-ui #starfield-layer {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  opacity: 0 !important;
+}
+
+body.proto-ui #matrix-bg {
+  opacity: 0 !important;
+  filter: none !important;
+}
+
+body.proto-ui.background-matrix #matrix-bg {
+  opacity: 0.92 !important;
+}
+
+body.proto-ui .settings-nav-btn[data-pane="appearance"],
+body.proto-ui .settings-nav-btn[data-pane="mouse"],
+body.proto-ui .settings-pane[data-pane="appearance"],
+body.proto-ui .settings-pane[data-pane="mouse"] {
+  display: none !important;
+}
+
+body.proto-ui .top-bar {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  grid-template-columns: minmax(192px, 260px) minmax(0, 1fr) auto !important;
+  min-height: 128px !important;
+  padding: 18px 28px 20px !important;
+  gap: 30px !important;
+}
+
+body.proto-ui .logo-container {
+  position: static !important;
+  width: auto !important;
+  min-width: 192px !important;
+  height: auto !important;
+  min-height: auto !important;
+  overflow: visible !important;
+  padding: 0 !important;
+}
+
+body.proto-ui .logo {
+  position: static !important;
+  width: 184px !important;
+  height: auto !important;
+  max-height: 184px !important;
+  transform: none !important;
+  filter: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+body.proto-ui .top-nav-actions {
+  justify-self: end !important;
+  justify-content: flex-end !important;
+  width: 100% !important;
+  padding-left: 72px !important;
+}
+
+body.proto-ui .nav-tabs {
+  width: 100% !important;
+  justify-content: flex-end !important;
+  gap: 18px !important;
+}
+
+body.proto-ui .nav-tab i {
+  display: none !important;
+}
+
+body.proto-ui .nav-tab {
+  gap: 0 !important;
+  padding: 6px 0 !important;
+  min-height: auto !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  font-size: 0.88rem !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+}
+
+@media (max-width: 980px) {
+  body.proto-ui .top-bar {
+    grid-template-columns: minmax(120px, 148px) minmax(0, 1fr) !important;
+    min-height: 104px !important;
+  }
+
+  body.proto-ui .top-nav-actions {
+    padding-left: 26px !important;
+  }
+
+  body.proto-ui .logo {
+    width: 108px !important;
+    max-height: 108px !important;
+  }
+}
+
+body.proto-ui,
+body.proto-ui *,
+body.proto-ui *:before,
+body.proto-ui *:after {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+body.proto-ui #home-section,
+body.proto-ui .top-nav-actions,
+body.proto-ui .nav-tabs,
+body.proto-ui #gameTabsStrip,
+body.proto-ui .settings-bottom-ad {
+  display: none !important;
+}
+
+body.proto-ui header {
+  padding: 0 0 12px !important;
+  margin-bottom: 18px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+body.proto-ui .top-bar {
+  grid-template-columns: minmax(210px, 272px) auto !important;
+  min-height: 108px !important;
+  padding: 14px 18px 16px !important;
+  gap: 14px !important;
+  background: #090909 !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 20px !important;
+  box-shadow: none !important;
+}
+
+body.proto-ui .top-right-cluster {
+  justify-self: end !important;
+  align-items: center !important;
+}
+
+body.proto-ui .logo-container {
+  min-width: 232px !important;
+}
+
+body.proto-ui .logo {
+  width: 222px !important;
+  max-height: 222px !important;
+}
+
+body.proto-ui .live-counter {
+  background: #121212 !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  box-shadow: none !important;
+}
+
+body.proto-ui section,
+body.proto-ui #all-lessons,
+body.proto-ui #chat-section,
+body.proto-ui #account-section,
+body.proto-ui #admin-section,
+body.proto-ui #info-section,
+body.proto-ui #settings-section,
+body.proto-ui .game-browser,
+body.proto-ui .game-tabbar,
+body.proto-ui .game-view-stack,
+body.proto-ui .tab-info-modal-card,
+body.proto-ui .lessons-header,
+body.proto-ui .search-container,
+body.proto-ui .sorter-wrapper,
+body.proto-ui #settings-section .modal-content,
+body.proto-ui #settings-section .modal-body,
+body.proto-ui #settings-section .settings-shell,
+body.proto-ui #settings-section .settings-group,
+body.proto-ui #settings-section .setting-item,
+body.proto-ui #settings-section .settings-docs-nav,
+body.proto-ui #settings-section .settings-docs-content,
+body.proto-ui .ad-container {
+  background: #0a0a0b !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: none !important;
+}
+
+body.proto-ui #all-lessons {
+  display: block !important;
+  margin-top: 18px !important;
+}
+
+body.proto-ui .game-tabbar {
+  display: flex !important;
+  justify-content: flex-end !important;
+  min-height: 56px !important;
+  padding: 12px 16px !important;
+  background: #080808 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+body.proto-ui .game-toolbar {
+  width: 100% !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+}
+
+body.proto-ui .game-toolbar .btn,
+body.proto-ui .game-toolbar button,
+body.proto-ui .btn,
+body.proto-ui .btn i,
+body.proto-ui .apply-btn,
+body.proto-ui .file-btn,
+body.proto-ui .tab-info-copy-btn {
+  background: #131313 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+  cursor: auto !important;
+}
+
+body.proto-ui .game-toolbar .btn:hover,
+body.proto-ui .btn:hover,
+body.proto-ui .apply-btn:hover,
+body.proto-ui .file-btn:hover,
+body.proto-ui .tab-info-copy-btn:hover {
+  background: #1a1a1a !important;
+  border-color: rgba(255, 255, 255, 0.20) !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+body.proto-ui .search-box,
+body.proto-ui .sort-select,
+body.proto-ui .settings-select,
+body.proto-ui #settings-section input,
+body.proto-ui #settings-section select,
+body.proto-ui #settings-section textarea {
+  background: #0d0d0f !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: none !important;
+}
+
+body.proto-ui .home-carousel-card,
+body.proto-ui .lesson-card {
+  background: #0f0f10 !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  box-shadow: none !important;
+}
+
+body.proto-ui .home-carousel-overlay,
+body.proto-ui .lesson-overlay {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  align-items: flex-start !important;
+  inset: 0 !important;
+  padding: 16px !important;
+  gap: 6px !important;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.14) 42%, rgba(0, 0, 0, 0.90) 100%) !important;
+  border-radius: inherit !important;
+  overflow: hidden !important;
+}
+
+body.proto-ui .home-carousel-title-wrap,
+body.proto-ui .lesson-title-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 1 !important;
+  transform: none !important;
+  justify-content: flex-start !important;
+}
+
+body.proto-ui .home-carousel-title,
+body.proto-ui .lesson-title {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  text-align: left !important;
+  text-transform: none !important;
+  text-shadow: none !important;
+}
+
+body.proto-ui .home-carousel-desc,
+body.proto-ui .lesson-desc {
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  display: -webkit-box !important;
+  margin-top: 8px !important;
+  padding: 0 !important;
+  opacity: 0.78 !important;
+  transform: none !important;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  text-align: left !important;
+  color: rgba(255, 255, 255, 0.72) !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 2 !important;
+  overflow: hidden !important;
+}
+
+body.proto-ui .home-carousel-card:hover .home-carousel-title-wrap,
+body.proto-ui .lesson-card:hover .lesson-title-wrap,
+body.proto-ui .home-carousel-card:hover .home-carousel-desc,
+body.proto-ui .lesson-card:hover .lesson-desc {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+body.proto-ui .home-carousel-card:hover .home-carousel-image,
+body.proto-ui .lesson-card:hover .lesson-image {
+  transform: scale(1.02) !important;
+  filter: saturate(0.92) brightness(0.76) !important;
+}
+
+body.proto-ui #custom-scrollbar {
+  opacity: 0.42 !important;
+  pointer-events: auto !important;
+}
+
+body.proto-ui #custom-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.28) !important;
+}
+
+body.proto-ui #custom-scrollbar-thumb:hover,
+body.proto-ui #custom-scrollbar-thumb:active,
+body.proto-ui #custom-scrollbar-thumb.dragging {
+  background: rgba(255, 255, 255, 0.44) !important;
+}
+
+body.proto-ui .tab-info-modal {
+  background: rgba(0, 0, 0, 0.82) !important;
+}
+
+body.proto-ui .troll-media-overlay,
+body.proto-ui .site-bust-overlay,
+body.proto-ui .site-nuke-overlay {
+  background: rgba(0, 0, 0, 0.86) !important;
+}
+
+body.proto-ui .site-bust-image {
+  width: min(92vw, 1080px) !important;
+  height: auto !important;
+  max-height: 86vh !important;
+  object-fit: contain !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 18px !important;
+  box-shadow: none !important;
+  background: #050505 !important;
+}
+
+body.proto-ui .site-nuke-panel {
+  background: #050505 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 980px) {
+  body.proto-ui .top-bar {
+    grid-template-columns: minmax(150px, 1fr) auto !important;
+    min-height: 92px !important;
+    padding: 12px 14px !important;
+  }
+
+  body.proto-ui .logo-container {
+    min-width: 150px !important;
+  }
+
+  body.proto-ui .logo {
+    width: 136px !important;
+    max-height: 136px !important;
+  }
+
+  body.proto-ui .live-counter {
+    padding: 6px 10px !important;
+  }
+}
+
+/* Restore visible nav and original lesson-cover layout */
+body.proto-ui .top-bar {
+  grid-template-columns: minmax(232px, 248px) minmax(0, 1fr) auto !important;
+}
+
+body.proto-ui .top-nav-actions {
+  display: flex !important;
+  align-items: center !important;
+  justify-self: center !important;
+  min-width: 0 !important;
+  padding: 0 18px !important;
+}
+
+body.proto-ui .nav-tabs {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+}
+
+body.proto-ui #home-section,
+body.proto-ui #gameTabsStrip,
+body.proto-ui .settings-bottom-ad {
+  display: none !important;
+}
+
+body.proto-ui .home-carousel-card,
+body.proto-ui .lesson-card {
+  border-radius: 20px !important;
+  background: #0f0f10 !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  box-shadow: none !important;
+}
+
+body.proto-ui .home-carousel-card::after,
+body.proto-ui .lesson-card::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.10), transparent 28%, transparent 58%, rgba(5, 5, 5, 0.68)) !important;
+  opacity: 0.42 !important;
+  transition: opacity 0.34s ease !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+body.proto-ui .home-carousel-card:hover::after,
+body.proto-ui .lesson-card:hover::after {
+  opacity: 0.82 !important;
+}
+
+body.proto-ui .home-carousel-overlay,
+body.proto-ui .lesson-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  padding: 0 !important;
+  z-index: 2 !important;
+  background: linear-gradient(180deg, rgba(8, 8, 10, 0.04) 0%, rgba(8, 8, 10, 0.10) 34%, rgba(8, 8, 10, 0.90) 100%) !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+}
+
+body.proto-ui .home-carousel-title-wrap,
+body.proto-ui .lesson-title-wrap {
+  position: absolute !important;
+  top: auto !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 16px !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0 12px !important;
+  margin: 0 !important;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  pointer-events: none !important;
+  box-sizing: border-box !important;
+}
+
+body.proto-ui .home-carousel-card:hover .home-carousel-title-wrap {
+  transform: translateY(-102px) !important;
+}
+
+body.proto-ui .lesson-card:hover .lesson-title-wrap {
+  transform: translateY(-142px) !important;
+}
+
+body.proto-ui .home-carousel-title,
+body.proto-ui .lesson-title {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: fit-content !important;
+  max-width: min(100%, 290px) !important;
+  margin: 0 !important;
+  padding: 10px 16px !important;
+  background: #111214 !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  border-radius: 17px !important;
+  box-shadow: none !important;
+  text-align: center !important;
+  text-transform: none !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.proto-ui .home-carousel-desc,
+body.proto-ui .lesson-desc {
+  position: absolute !important;
+  left: 14px !important;
+  right: 14px !important;
+  bottom: 14px !important;
+  display: -webkit-box !important;
+  margin: 0 !important;
+  padding: 10px 14px !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+  background: #111214 !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  border-radius: 16px !important;
+  box-shadow: none !important;
+  text-align: left !important;
+  color: rgba(255, 255, 255, 0.82) !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+
+body.proto-ui .home-carousel-desc {
+  -webkit-line-clamp: 3 !important;
+}
+
+body.proto-ui .lesson-desc {
+  -webkit-line-clamp: 5 !important;
+}
+
+body.proto-ui .home-carousel-card:hover .home-carousel-desc,
+body.proto-ui .lesson-card:hover .lesson-desc {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+body.proto-ui .home-carousel-card:hover .home-carousel-image {
+  transform: scale(1.06) !important;
+  filter: saturate(1.03) brightness(0.86) !important;
+}
+
+body.proto-ui .lesson-card:hover .lesson-image {
+  transform: scale(1.05) !important;
+  filter: saturate(1.04) brightness(0.88) !important;
+}
+
+@media (max-width: 980px) {
+  body.proto-ui .top-bar {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+    justify-items: center !important;
+  }
+
+  body.proto-ui .top-nav-actions,
+  body.proto-ui .top-right-cluster {
+    justify-self: center !important;
+    width: 100% !important;
+  }
+
+  body.proto-ui .nav-tabs {
+    justify-content: center !important;
+  }
+}
+
+/* Final nav and cover correction */
+body.proto-ui[data-active-tab="lessons"] #all-lessons {
+  display: block !important;
+}
+
+body.proto-ui[data-active-tab]:not([data-active-tab="lessons"]) #all-lessons {
+  display: none !important;
+}
+
+body.proto-ui .top-bar {
+  grid-template-columns: minmax(232px, 248px) minmax(0, 1fr) auto !important;
+  align-items: center !important;
+}
+
+body.proto-ui .top-nav-actions {
+  display: flex !important;
+  align-items: center !important;
+  justify-self: start !important;
+  min-width: 0 !important;
+  padding: 0 0 0 10px !important;
+}
+
+body.proto-ui .nav-tabs {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 18px !important;
+  flex-wrap: wrap !important;
+}
+
+body.proto-ui .nav-tab,
+body.proto-ui .nav-tab:hover,
+body.proto-ui .nav-tab.active {
+  min-width: 0 !important;
+  min-height: auto !important;
+  padding: 4px 0 !important;
+  gap: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+  color: rgba(255, 255, 255, 0.76) !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+}
+
+body.proto-ui .nav-tab.active,
+body.proto-ui .nav-tab:hover {
+  color: #ffffff !important;
+}
+
+body.proto-ui .nav-tab i {
+  display: none !important;
+}
+
+body.proto-ui .nav-tab span {
+  display: inline-block !important;
+}
+
+body.proto-ui .home-carousel-card {
+  flex: 0 0 260px !important;
+  position: relative !important;
+  width: 260px !important;
+  height: 176px !important;
+  min-height: 176px !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(var(--primary-orange-rgb), 0.45) !important;
+  background: linear-gradient(160deg, rgba(20, 20, 20, 0.86), rgba(9, 9, 9, 0.82)) !important;
+  box-shadow: none !important;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+  isolation: isolate !important;
+}
+
+body.proto-ui .home-carousel-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: var(--accent-orange) !important;
+  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.28), 0 10px 16px rgba(var(--primary-orange-rgb), 0.24) !important;
+}
+
+body.proto-ui .home-carousel-card::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 26%, transparent 56%, rgba(5, 5, 5, 0.78)) !important;
+  opacity: 0.52 !important;
+  transition: opacity 0.3s ease !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+body.proto-ui .home-carousel-card:hover::after {
+  opacity: 0.82 !important;
+}
+
+body.proto-ui .home-carousel-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  border: 0 !important;
+  transition: transform 0.42s ease, filter 0.42s ease !important;
+  filter: saturate(0.95) brightness(0.95) !important;
+}
+
+body.proto-ui .home-carousel-card:hover .home-carousel-image {
+  transform: scale(1.06) !important;
+  filter: saturate(1.03) brightness(0.86) !important;
+}
+
+body.proto-ui .home-carousel-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
+  background: linear-gradient(180deg, rgba(8, 8, 10, 0.03) 0%, rgba(8, 8, 10, 0.12) 34%, rgba(8, 8, 10, 0.9) 100%) !important;
+}
+
+body.proto-ui .home-carousel-title-wrap {
+  position: absolute !important;
+  top: auto !important;
+  bottom: 14px !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  padding: 0 11px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  pointer-events: none !important;
+  transform: translateY(0) !important;
+  transition: transform 0.42s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+  box-sizing: border-box !important;
+}
+
+body.proto-ui .home-carousel-card:hover .home-carousel-title-wrap {
+  transform: translateY(-102px) !important;
+}
+
+body.proto-ui .home-carousel-title {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: fit-content !important;
+  max-width: min(100%, 216px) !important;
+  padding: 9px 15px !important;
+  border-radius: 16px !important;
+  background: rgba(10, 12, 20, 0.82) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.18) !important;
+  font-size: 0.92rem !important;
+  color: var(--light-text) !important;
+  line-height: 1.28 !important;
+  text-align: center !important;
+  letter-spacing: 0.01em !important;
+  text-wrap: balance !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.proto-ui .home-carousel-desc {
+  position: absolute !important;
+  left: 12px !important;
+  right: 12px !important;
+  bottom: 12px !important;
+  font-size: 0.8rem !important;
+  color: rgba(246, 244, 239, 0.82) !important;
+  line-height: 1.45 !important;
+  opacity: 0 !important;
+  transform: translateY(18px) !important;
+  transition: opacity 0.34s ease, transform 0.34s ease !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  word-break: break-word !important;
+  min-height: 2.5em !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45) !important;
+  pointer-events: none !important;
+  padding: 10px 12px !important;
+  border-radius: 16px !important;
+  background: rgba(10, 12, 20, 0.78) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.14) !important;
+}
+
+body.proto-ui .home-carousel-card:hover .home-carousel-desc {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+body.proto-ui .lesson-card {
+  background: linear-gradient(160deg, rgba(20, 20, 20, 0.82), rgba(10, 10, 10, 0.78)) !important;
+  border: 1px solid rgba(var(--primary-orange-rgb), 0.48) !important;
+  border-radius: 18px !important;
+  padding: 0 !important;
+  transition: transform 0.34s ease, box-shadow 0.34s ease, border-color 0.34s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: 228px !important;
+  isolation: isolate !important;
+  contain: layout style paint !important;
+}
+
+body.proto-ui .lesson-card:hover {
+  transform: translateY(-7px) !important;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.38), 0 10px 24px rgba(var(--primary-orange-rgb), 0.24) !important;
+  border-color: var(--accent-orange) !important;
+}
+
+body.proto-ui .lesson-card::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 28%, transparent 58%, rgba(5, 5, 5, 0.72)) !important;
+  opacity: 0.42 !important;
+  transition: opacity 0.34s ease !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+body.proto-ui .lesson-card:hover::after {
+  opacity: 0.82 !important;
+}
+
+body.proto-ui .lesson-image {
+  width: 100% !important;
+  height: 228px !important;
+  object-fit: cover !important;
+  display: block !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  transition: transform 0.42s ease, filter 0.42s ease !important;
+  filter: saturate(0.95) brightness(0.96) !important;
+}
+
+body.proto-ui .lesson-card:hover .lesson-image {
+  transform: scale(1.05) !important;
+  filter: saturate(1.04) brightness(0.88) !important;
+}
+
+body.proto-ui .lesson-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  padding: 0 !important;
+  background: linear-gradient(180deg, rgba(8, 8, 10, 0.04) 0%, rgba(8, 8, 10, 0.1) 34%, rgba(8, 8, 10, 0.9) 100%) !important;
+  z-index: 2 !important;
+}
+
+body.proto-ui .lesson-title-wrap {
+  position: absolute !important;
+  top: auto !important;
+  bottom: 18px !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  padding: 0 12px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  pointer-events: none !important;
+  transform: translateY(0) !important;
+  transition: transform 0.42s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+  box-sizing: border-box !important;
+}
+
+body.proto-ui .lesson-card:hover .lesson-title-wrap {
+  transform: translateY(-142px) !important;
+}
+
+body.proto-ui .lesson-title {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: fit-content !important;
+  max-width: min(100%, 290px) !important;
+  font-size: 1rem !important;
+  color: var(--light-text) !important;
+  margin: 0 !important;
+  padding: 10px 16px !important;
+  border-radius: 17px !important;
+  background: rgba(10, 12, 20, 0.82) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.18) !important;
+  line-height: 1.25 !important;
+  text-align: center !important;
+  letter-spacing: 0.01em !important;
+  text-wrap: balance !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.proto-ui .lesson-desc {
+  position: absolute !important;
+  left: 16px !important;
+  right: 16px !important;
+  bottom: 16px !important;
+  color: rgba(246, 244, 239, 0.82) !important;
+  margin: 0 !important;
+  font-size: 0.85rem !important;
+  line-height: 1.5 !important;
+  opacity: 0 !important;
+  transform: translateY(22px) !important;
+  transition: opacity 0.34s ease, transform 0.34s ease !important;
+  max-width: none !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45) !important;
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 5 !important;
+  line-clamp: 5 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  word-break: break-word !important;
+  pointer-events: none !important;
+  padding: 10px 14px !important;
+  border-radius: 17px !important;
+  background: rgba(10, 12, 20, 0.78) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.14) !important;
+}
+
+body.proto-ui .lesson-card:hover .lesson-desc {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+@media (max-width: 980px) {
+  body.proto-ui .top-bar {
+    grid-template-columns: 1fr !important;
+    justify-items: start !important;
+  }
+
+  body.proto-ui .top-nav-actions,
+  body.proto-ui .top-right-cluster {
+    justify-self: start !important;
+    width: 100% !important;
+  }
+
+  body.proto-ui .nav-tabs {
+    justify-content: flex-start !important;
+    gap: 12px !important;
+  }
+}
+
+/* Final nav/card cleanup */
+body.proto-ui,
+body.proto-ui .proto-shell,
+body.proto-ui .proto-card,
+body.proto-ui .proto-fog,
+body.proto-ui header,
+body.proto-ui .top-bar,
+body.proto-ui .live-counter,
+body.proto-ui section,
+body.proto-ui #all-lessons,
+body.proto-ui #chat-section,
+body.proto-ui #account-section,
+body.proto-ui #admin-section,
+body.proto-ui #info-section,
+body.proto-ui #settings-section,
+body.proto-ui .lessons-header,
+body.proto-ui .search-container,
+body.proto-ui .sorter-wrapper,
+body.proto-ui .game-tabbar,
+body.proto-ui .game-view-stack,
+body.proto-ui .tab-info-modal,
+body.proto-ui .tab-info-modal-card,
+body.proto-ui .chat-app-shell,
+body.proto-ui .settings-shell,
+body.proto-ui .settings-group,
+body.proto-ui .settings-docs-nav,
+body.proto-ui .settings-docs-content,
+body.proto-ui .setting-item,
+body.proto-ui .account-shell,
+body.proto-ui .admin-shell,
+body.proto-ui .modal-content,
+body.proto-ui .modal-header,
+body.proto-ui .modal-body,
+body.proto-ui .chat-main-card,
+body.proto-ui .chat-sidebar-card,
+body.proto-ui .chat-room-panel,
+body.proto-ui .chat-room-top,
+body.proto-ui .chat-composer,
+body.proto-ui .chat-lock-card,
+body.proto-ui .chat-modal-card,
+body.proto-ui .info-hero,
+body.proto-ui .info-social-link,
+body.proto-ui .info-socials-panel,
+body.proto-ui .partner-card,
+body.proto-ui .community-header,
+body.proto-ui .community-header-simple,
+body.proto-ui .site-footer,
+body.proto-ui .search-box,
+body.proto-ui .sort-select,
+body.proto-ui .settings-select,
+body.proto-ui .btn,
+body.proto-ui .apply-btn,
+body.proto-ui .file-btn {
+  background-color: #0a0a0b !important;
+  background-image: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+body.proto-ui .proto-shell::before,
+body.proto-ui .proto-shell::after,
+body.proto-ui .proto-card::before,
+body.proto-ui .proto-card::after,
+body.proto-ui .proto-fog::before,
+body.proto-ui .proto-fog::after,
+body.proto-ui header::before,
+body.proto-ui header::after,
+body.proto-ui .top-bar::before,
+body.proto-ui .top-bar::after,
+body.proto-ui section::before,
+body.proto-ui section::after,
+body.proto-ui .lessons-header::before,
+body.proto-ui .lessons-header::after,
+body.proto-ui .search-container::before,
+body.proto-ui .search-container::after,
+body.proto-ui .sorter-wrapper::before,
+body.proto-ui .sorter-wrapper::after,
+body.proto-ui .settings-shell::before,
+body.proto-ui .settings-shell::after,
+body.proto-ui .settings-group::before,
+body.proto-ui .settings-group::after,
+body.proto-ui .settings-docs-nav::before,
+body.proto-ui .settings-docs-nav::after,
+body.proto-ui .settings-docs-content::before,
+body.proto-ui .settings-docs-content::after,
+body.proto-ui .chat-app-shell::before,
+body.proto-ui .chat-app-shell::after,
+body.proto-ui .chat-main-card::before,
+body.proto-ui .chat-main-card::after,
+body.proto-ui .chat-sidebar-card::before,
+body.proto-ui .chat-sidebar-card::after,
+body.proto-ui .partner-card::before,
+body.proto-ui .partner-card::after,
+body.proto-ui .site-footer::before,
+body.proto-ui .site-footer::after {
+  background: none !important;
+  background-image: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+body.proto-ui[data-active-tab="lessons"] #all-lessons {
+  display: block !important;
+}
+
+body.proto-ui[data-active-tab]:not([data-active-tab="lessons"]) #all-lessons {
+  display: none !important;
+}
+
+body.proto-ui .top-bar {
+  grid-template-columns: minmax(232px, 248px) minmax(0, 1fr) auto !important;
+}
+
+body.proto-ui .top-nav-actions {
+  display: flex !important;
+  align-items: center !important;
+  justify-self: end !important;
+  margin-left: auto !important;
+  padding: 0 20px 0 0 !important;
+  min-width: 0 !important;
+}
+
+body.proto-ui .nav-tabs {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 18px !important;
+  flex-wrap: wrap !important;
+}
+
+body.proto-ui .nav-tab,
+body.proto-ui .nav-tab:hover,
+body.proto-ui .nav-tab.active {
+  min-width: 0 !important;
+  min-height: auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+  color: rgba(255, 255, 255, 0.76) !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+}
+
+body.proto-ui .nav-tab.active,
+body.proto-ui .nav-tab:hover {
+  color: #ffffff !important;
+}
+
+body.proto-ui .nav-tab i {
+  display: none !important;
+}
+
+body.proto-ui .home-carousel-desc,
+body.proto-ui .lesson-desc {
+  display: none !important;
+}
+
+body.proto-ui .home-carousel-card,
+body.proto-ui .lesson-card {
+  background: #050505 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
+
+body.proto-ui .home-carousel-card::after,
+body.proto-ui .lesson-card::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 22%, rgba(0, 0, 0, 0.14) 62%, rgba(0, 0, 0, 0.72) 100%) !important;
+  opacity: 0 !important;
+  transition: opacity 0.28s ease !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+body.proto-ui .home-carousel-card:hover::after,
+body.proto-ui .lesson-card:hover::after {
+  opacity: 1 !important;
+}
+
+body.proto-ui .home-carousel-image,
+body.proto-ui .lesson-image {
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #050505 !important;
+  filter: none !important;
+  transition: transform 0.28s ease, filter 0.28s ease !important;
+}
+
+body.proto-ui .home-carousel-card:hover .home-carousel-image,
+body.proto-ui .lesson-card:hover .lesson-image {
+  transform: scale(1.03) !important;
+  filter: blur(2px) brightness(0.56) !important;
+}
+
+body.proto-ui .home-carousel-overlay,
+body.proto-ui .lesson-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  padding: 0 !important;
+  background: none !important;
+  z-index: 2 !important;
+}
+
+body.proto-ui .home-carousel-title-wrap,
+body.proto-ui .lesson-title-wrap {
+  position: absolute !important;
+  inset: 0 !important;
+  width: auto !important;
+  padding: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  opacity: 0 !important;
+  transform: translateY(24px) !important;
+  transition: opacity 0.28s ease, transform 0.28s ease !important;
+  pointer-events: none !important;
+  box-sizing: border-box !important;
+}
+
+body.proto-ui .home-carousel-card:hover .home-carousel-title-wrap,
+body.proto-ui .lesson-card:hover .lesson-title-wrap {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+body.proto-ui .home-carousel-title,
+body.proto-ui .lesson-title {
+  max-width: min(100%, 82%) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important;
+  background: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+  text-align: center !important;
+  text-transform: none !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.66) !important;
+}
+
+body.proto-ui .home-carousel-title {
+  font-size: 1rem !important;
+}
+
+body.proto-ui .lesson-title {
+  font-size: 1.08rem !important;
+}
+
+body.proto-ui .home-carousel-card:hover .home-carousel-title,
+body.proto-ui .lesson-card:hover .lesson-title {
+  opacity: 1 !important;
+}
+
+@media (max-width: 980px) {
+  body.proto-ui .top-bar {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.proto-ui .top-nav-actions,
+  body.proto-ui .top-right-cluster {
+    justify-self: stretch !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  body.proto-ui .nav-tabs {
+    justify-content: flex-end !important;
+    gap: 12px !important;
+  }
+
+  body.proto-ui .home-carousel-title-wrap,
+  body.proto-ui .lesson-title-wrap {
+    inset: 0 !important;
+  }
+}
+
+/* Final settings/card hard override */
+body.proto-ui #settings-section,
+body.proto-ui #settings-section .modal-content,
+body.proto-ui #settings-section .modal-body,
+body.proto-ui #settings-section .settings-shell,
+body.proto-ui #settings-section .settings-docs-layout,
+body.proto-ui #settings-section .settings-docs-nav,
+body.proto-ui #settings-section .settings-docs-content,
+body.proto-ui #settings-section .settings-docs-intro,
+body.proto-ui #settings-section .settings-group,
+body.proto-ui #settings-section .settings-group-body,
+body.proto-ui #settings-section .setting-item,
+body.proto-ui #settings-section .setting-item-wide,
+body.proto-ui #settings-section .setting-theme,
+body.proto-ui #settings-section .setting-background,
+body.proto-ui #settings-section .setting-logo,
+body.proto-ui #settings-section .setting-ads,
+body.proto-ui #settings-section .setting-import {
+  background: #090909 !important;
+  background-color: #090909 !important;
+  background-image: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+body.proto-ui #settings-section::before,
+body.proto-ui #settings-section::after,
+body.proto-ui #settings-section .modal-content::before,
+body.proto-ui #settings-section .modal-content::after,
+body.proto-ui #settings-section .settings-shell::before,
+body.proto-ui #settings-section .settings-shell::after,
+body.proto-ui #settings-section .settings-docs-layout::before,
+body.proto-ui #settings-section .settings-docs-layout::after,
+body.proto-ui #settings-section .settings-docs-nav::before,
+body.proto-ui #settings-section .settings-docs-nav::after,
+body.proto-ui #settings-section .settings-docs-content::before,
+body.proto-ui #settings-section .settings-docs-content::after,
+body.proto-ui #settings-section .settings-group::before,
+body.proto-ui #settings-section .settings-group::after,
+body.proto-ui #settings-section .setting-item::before,
+body.proto-ui #settings-section .setting-item::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+body.proto-ui .home-carousel-card,
+body.proto-ui .lesson-card {
+  display: flex !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+}
+
+body.proto-ui .home-carousel-image,
+body.proto-ui .lesson-image {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  padding: 8px !important;
+  box-sizing: border-box !important;
+  background: #050505 !important;
+}
+
+body.proto-ui .home-carousel-title-wrap,
+body.proto-ui .lesson-title-wrap {
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+body.proto-ui .home-carousel-title,
+body.proto-ui .lesson-title {
+  width: 100% !important;
+  max-width: min(100%, 80%) !important;
+  text-align: center !important;
+}
+
+body.proto-ui .settings-simple-section {
+  background: transparent !important;
+}
+
+body.proto-ui #settings-section .settings-panel[hidden] {
+  display: none !important;
+}
+
+body.proto-ui #settings-section .settings-page-header,
+body.proto-ui #settings-section .settings-simple-panel,
+body.proto-ui #settings-section .settings-simple-row,
+body.proto-ui #settings-section .settings-simple-select {
+  background: #090909 !important;
+  background-image: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+body.proto-ui #settings-section .settings-page-header,
+body.proto-ui #settings-section .settings-simple-panel {
+  max-width: 980px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+body.proto-ui #settings-section .settings-simple-panel {
+  padding: 22px 24px !important;
+  border-radius: 18px !important;
+}
+
+body.proto-ui #settings-section .settings-simple-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 20px !important;
+  border: 0 !important;
+  padding: 0 !important;
+}
+
+body.proto-ui #settings-section .settings-simple-copy {
+  max-width: 36rem !important;
+}
+
+body.proto-ui #settings-section .settings-simple-heading {
+  margin: 0 0 6px !important;
+  font-size: 1.08rem !important;
+  color: #ffffff !important;
+}
+
+body.proto-ui #settings-section .settings-simple-text {
+  margin: 0 !important;
+  color: rgba(255, 255, 255, 0.64) !important;
+}
+
+body.proto-ui #settings-section .settings-simple-select {
+  min-width: 190px !important;
+}
+
+body.proto-ui .lesson-card {
+  aspect-ratio: 16 / 10 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+body.proto-ui .lesson-image {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 10px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  box-sizing: border-box !important;
+}
+
+body.proto-ui .lesson-card[data-random-game="true"]::after {
+  content: none !important;
+  display: none !important;
+}
+
+body.proto-ui .lesson-card[data-random-game="true"] .lesson-overlay {
+  background: none !important;
+}
+
+body.proto-ui .lesson-card[data-random-game="true"] .lesson-title-wrap,
+body.proto-ui .lesson-card[data-random-game="true"]:hover .lesson-title-wrap {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+body.proto-ui .lesson-card[data-random-game="true"] .lesson-title {
+  opacity: 1 !important;
+}
+
+body.proto-ui .lesson-card[data-random-game="true"] .lesson-image,
+body.proto-ui .lesson-card[data-random-game="true"]:hover .lesson-image {
+  transform: none !important;
+  filter: none !important;
+}
+
+@media (max-width: 720px) {
+  body.proto-ui #settings-section .settings-simple-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  body.proto-ui #settings-section .settings-simple-select {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+}
+
+body.proto-ui #settings-section .settings-simple-panel[hidden],
+body.proto-ui #settings-section #bgControlsPanel[hidden],
+body.proto-ui #settings-section .settings-row[hidden] {
+  display: none !important;
+}
+
+body.proto-ui #settings-section {
+  display: block !important;
+  max-width: 860px !important;
+  margin: 0 auto !important;
+  padding: 18px 0 42px !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+body.proto-ui #settings-section .settings-panel {
+  display: block !important;
+  max-width: 760px !important;
+  margin: 12px auto 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+body.proto-ui #settings-section .settings-page-header {
+  max-width: 760px !important;
+  margin: 0 auto 14px !important;
+  border: 0 !important;
+  background: transparent !important;
+  text-align: center !important;
+}
+
+body.proto-ui #settings-section .settings-page-header > div {
+  margin: 0 auto !important;
+}
+
+body.proto-ui #settings-section .settings-nav {
+  position: static !important;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  width: 100% !important;
+  margin: 0 0 16px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+body.proto-ui #settings-section .settings-nav-icon {
+  display: none !important;
+}
+
+body.proto-ui #settings-section .settings-nav-btn {
+  flex: 0 0 auto !important;
+  align-self: auto !important;
+  width: auto !important;
+  min-width: 124px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  padding: 9px 14px !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.74) !important;
+  box-shadow: none !important;
+}
+
+body.proto-ui #settings-section .settings-nav-btn.active {
+  border-color: rgba(255, 255, 255, 0.11) !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  color: #ffffff !important;
+}
+
+body.proto-ui #settings-section .settings-content {
+  display: block !important;
+  max-width: 680px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+body.proto-ui #settings-section .settings-pane {
+  display: none !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+body.proto-ui #settings-section .settings-pane.active {
+  display: block !important;
+}
+
+body.proto-ui #settings-section .settings-card {
+  margin: 0 !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  background: #0a0a0a !important;
+}
+
+body.proto-ui #settings-section .settings-card + .settings-card {
+  margin-top: 16px !important;
+}
+
+body.proto-ui #settings-section .settings-card-label {
+  padding: 16px 20px 4px !important;
+  border: 0 !important;
+  text-align: center !important;
+}
+
+body.proto-ui #settings-section .settings-row {
+  padding: 16px 20px 18px !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+body.proto-ui #settings-section .settings-row + .settings-row {
+  border-top: 0 !important;
+}
+
+@media (max-width: 720px) {
+  body.proto-ui #settings-section .settings-nav {
+    gap: 8px !important;
+  }
+
+  body.proto-ui #settings-section .settings-nav-btn {
+    flex: 1 1 calc(50% - 8px) !important;
+    width: auto !important;
+    min-width: 0 !important;
+  }
+
+  body.proto-ui #settings-section .settings-row {
+    align-items: stretch !important;
+  }
+}
+
+body.proto-ui header {
+  width: 100vw !important;
+  margin: 0 calc(50% - 50vw) 18px !important;
+  padding: 0 !important;
+}
+
+body.proto-ui .top-bar {
+  width: 100vw !important;
+  min-height: 64px !important;
+  margin: 0 !important;
+  padding: 12px 22px !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-radius: 0 !important;
+  background: #0a0a0b !important;
+}
+
+body.proto-ui .top-nav-actions {
+  padding-right: 0 !important;
+}
+
+body.proto-ui .top-right-cluster {
+  justify-self: end !important;
+}
+
+body.proto-ui #home-section[hidden],
+body.proto-ui #all-lessons[hidden],
+body.proto-ui #chat-section[hidden],
+body.proto-ui #account-section[hidden],
+body.proto-ui #admin-section[hidden],
+body.proto-ui #info-section[hidden],
+body.proto-ui #settings-section[hidden] {
+  display: none !important;
+}
+
+body.proto-ui #home-section,
+body.proto-ui #all-lessons,
+body.proto-ui #chat-section,
+body.proto-ui #account-section,
+body.proto-ui #admin-section,
+body.proto-ui #info-section,
+body.proto-ui #settings-section {
+  position: relative !important;
+  z-index: 0 !important;
+}
+
+body.proto-ui .is-active-section {
+  z-index: 1 !important;
+}
+
+body.proto-ui .site-footer {
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) !important;
+  align-items: center !important;
+}
+
+body.proto-ui .site-footer-left {
+  display: block !important;
+  justify-self: start !important;
+  text-align: left !important;
+}
+
+body.proto-ui .site-footer-left p:first-child {
+  display: none !important;
+}
+
+body.proto-ui .site-footer-center {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 18px !important;
+  justify-self: center !important;
+  min-width: 0 !important;
+}
+
+body.proto-ui .site-footer-legal-link {
+  color: rgba(255, 255, 255, 0.72) !important;
+  font-size: 0.76rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+}
+
+body.proto-ui .site-footer-legal-link:hover {
+  color: #ffffff !important;
+}
+
+body.proto-ui .site-footer-right {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  justify-self: end !important;
+  width: 100% !important;
+}
+
+@media (max-width: 860px) {
+  body.proto-ui header {
+    margin-bottom: 14px !important;
+  }
+
+  body.proto-ui .top-bar {
+    padding: 10px 14px !important;
+  }
+
+  body.proto-ui .site-footer {
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+    gap: 12px !important;
+  }
+
+  body.proto-ui .site-footer-left,
+  body.proto-ui .site-footer-right {
+    justify-self: center !important;
+    text-align: center !important;
+    width: auto !important;
+  }
+
+  body.proto-ui .site-footer-center {
+    flex-wrap: wrap !important;
+    gap: 12px 16px !important;
+  }
+}
+
+body.proto-ui #main-container {
+  padding-top: 0 !important;
+}
+
+body.proto-ui header {
+  margin: 0 calc(50% - 50vw) 14px !important;
+  border: 0 !important;
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.12) !important;
+  background: #0a0a0b !important;
+}
+
+body.proto-ui .top-bar {
+  min-height: 58px !important;
+  padding: 8px 22px !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: #0a0a0b !important;
+}
+
+body.proto-ui .nav-tabs {
+  gap: 16px !important;
+}
+
+body.proto-ui .nav-tab {
+  position: relative !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding-bottom: 5px !important;
+  transform: none !important;
+  transition: color 0.18s ease !important;
+}
+
+body.proto-ui .nav-tab::before {
+  content: none !important;
+  display: none !important;
+}
+
+body.proto-ui .nav-tab::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 10px !important;
+  right: 10px !important;
+  bottom: -2px !important;
+  height: 1px !important;
+  background: rgba(194, 124, 21, 0.92) !important;
+  transform: scaleX(0.2) !important;
+  transform-origin: center !important;
+  opacity: 0 !important;
+  transition: transform 0.18s ease, opacity 0.18s ease !important;
+}
+
+body.proto-ui .nav-tab:hover,
+body.proto-ui .nav-tab:focus-visible {
+  background: transparent !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+body.proto-ui .nav-tab.active {
+  background: transparent !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+body.proto-ui .nav-tab:hover::after,
+body.proto-ui .nav-tab:focus-visible::after,
+body.proto-ui .nav-tab.active::after {
+  transform: scaleX(1) !important;
+  opacity: 1 !important;
+}
+
+body.proto-ui header::before,
+body.proto-ui header::after,
+body.proto-ui .top-bar::before,
+body.proto-ui .top-bar::after {
+  content: none !important;
+  display: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: none !important;
+}
+
+body.proto-ui #accountAuthCard {
+  max-width: 720px !important;
+  margin: 0 auto !important;
+}
+
+body.proto-ui #accountAuthCard .account-auth-toggle {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  max-width: 520px !important;
+  margin: 0 auto 16px !important;
+  padding: 6px !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 16px !important;
+  background: #090909 !important;
+}
+
+body.proto-ui #accountAuthCard .account-auth-toggle-btn {
+  flex: 1 1 0 !important;
+  min-height: 42px !important;
+  min-width: 0 !important;
+  padding: 10px 14px !important;
+  border: 0 !important;
+  border-radius: 12px !important;
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.74) !important;
+  font: inherit !important;
+  font-size: 0.84rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+}
+
+body.proto-ui #accountAuthCard .account-auth-toggle-btn.active {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+}
+
+body.proto-ui #accountAuthCard .account-auth-grid {
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 0 !important;
+  max-width: 520px !important;
+  margin: 0 auto !important;
+}
+
+body.proto-ui #accountAuthCard .account-form {
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+body.proto-ui #accountAuthCard .account-form[hidden] {
+  display: none !important;
+}
+
+body.proto-ui #settings-section .settings-panel {
+  max-width: 760px !important;
+  margin: 12px auto 0 !important;
+  padding: 18px !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 22px !important;
+  background: #090909 !important;
+  overflow: hidden !important;
+}
+
+body.proto-ui #settings-section .settings-nav {
+  margin-bottom: 14px !important;
+}
+
+body.proto-ui #settings-section .settings-content {
+  max-width: 100% !important;
+}
+
+@media (max-width: 860px) {
+  body.proto-ui #main-container {
+    padding-top: 0 !important;
+  }
+
+  body.proto-ui .top-bar {
+    padding: 8px 14px !important;
+  }
+
+  body.proto-ui #accountAuthCard .account-auth-toggle {
+    margin-bottom: 14px !important;
+  }
+
+  body.proto-ui #settings-section .settings-panel {
+    padding: 14px !important;
+    border-radius: 18px !important;
+  }
+}
+
+body.proto-ui .lessons-grid,
+body.proto-ui #allLessonsGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  max-width: 1380px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body.proto-ui .lesson-card {
+  overflow: hidden !important;
+  background: #050505 !important;
+}
+
+body.proto-ui .lesson-card[data-random-game="true"] .lesson-image,
+body.proto-ui .lesson-card[data-random-game="true"]:hover .lesson-image {
+  transform: scale(1.02) !important;
+  filter: blur(1.25px) saturate(0.94) brightness(0.9) !important;
+}
+
+body.proto-ui .lesson-image {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  background: transparent !important;
+  box-sizing: border-box !important;
+}
+
+body.proto-ui #background-root,
+body.proto-ui.background-none #background-root,
+body.proto-ui.background-matrix #background-root {
+  background: #05070b !important;
+}
+
+body.proto-ui #matrix-bg {
+  opacity: 0 !important;
+  transition: opacity 0.24s ease !important;
+}
+
+body.proto-ui.background-matrix #matrix-bg {
+  display: block !important;
+  opacity: 0.94 !important;
+}
+
+body.proto-ui.background-none #matrix-bg {
+  opacity: 0 !important;
+}
+
+body.proto-ui #home-section,
+body.proto-ui #all-lessons,
+body.proto-ui #account-section,
+body.proto-ui #admin-section,
+body.proto-ui #settings-section,
+body.proto-ui #info-section {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+body.proto-ui:not([data-active-tab="lessons"]) #home-section {
+  display: none !important;
+}
+
+body.proto-ui[data-active-tab="lessons"] #home-section {
+  display: block !important;
+}
+
+body.proto-ui[data-active-tab="lessons"] #all-lessons {
+  display: block !important;
+  margin-top: 0 !important;
+}
+
+body.proto-ui #home-section,
+body.proto-ui #all-lessons {
+  max-width: 1460px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 28px 30px !important;
+  background: #090c10 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.34) !important;
+}
+
+body.proto-ui #home-section .home-hero {
+  display: flex !important;
+}
+
+body.proto-ui #home-section .home-logo-wrap {
+  display: block !important;
+  width: min(500px, 82vw) !important;
+}
+
+body.proto-ui #home-section .home-logo {
+  display: block !important;
+  width: min(500px, 82vw) !important;
+  border: 1px solid rgba(var(--primary-orange-rgb), 0.42) !important;
+  box-shadow: 0 0 30px rgba(var(--primary-orange-rgb), 0.18), 0 22px 38px rgba(0, 0, 0, 0.34) !important;
+}
+
+body.proto-ui #home-section .home-logo-shine,
+body.proto-ui #home-section .home-subtitle,
+body.proto-ui #home-section .home-stats-row,
+body.proto-ui #home-section .home-popular-wrap {
+  display: block !important;
+}
+
+body.proto-ui #home-section .home-stats-row {
+  display: flex !important;
+}
+
+body.proto-ui .home-popular-wrap {
+  margin-top: 24px !important;
+}
+
+body.proto-ui .home-carousel {
+  display: block !important;
+  background: linear-gradient(145deg, rgba(14, 12, 8, 0.98), rgba(7, 8, 10, 0.98)) !important;
+  border: 1px solid rgba(var(--primary-orange-rgb), 0.24) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 18px 36px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.proto-ui .home-carousel-card,
+body.proto-ui .lesson-card {
+  display: flex !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+  border-radius: 22px !important;
+  background: #0c0f13 !important;
+  border: 1px solid rgba(var(--primary-orange-rgb), 0.22) !important;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.28) !important;
+  overflow: hidden !important;
+}
+
+body.proto-ui .home-carousel-card:hover,
+body.proto-ui .lesson-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: rgba(var(--primary-orange-rgb), 0.6) !important;
+  box-shadow: 0 22px 40px rgba(0, 0, 0, 0.38), 0 0 0 1px rgba(var(--primary-orange-rgb), 0.16) !important;
+}
+
+body.proto-ui .home-carousel-image,
+body.proto-ui .lesson-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  background: transparent !important;
+}
+
+body.proto-ui .lesson-overlay,
+body.proto-ui .home-carousel-overlay {
+  background: linear-gradient(180deg, rgba(5, 7, 11, 0.03) 0%, rgba(5, 7, 11, 0.14) 44%, rgba(5, 7, 11, 0.84) 100%) !important;
+}
+
+body.proto-ui .lesson-title-wrap,
+body.proto-ui .home-carousel-title-wrap {
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 18px !important;
+  display: flex !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+body.proto-ui .lesson-title,
+body.proto-ui .home-carousel-title {
+  max-width: min(100%, 320px) !important;
+  padding: 11px 18px !important;
+  background: rgba(7, 10, 14, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.32) !important;
+}
+
+body.proto-ui .lesson-desc,
+body.proto-ui .home-carousel-desc {
+  display: none !important;
+}
+
+body.proto-ui .lesson-card:hover .lesson-title-wrap {
+  transform: translateY(-84px) !important;
+}
+
+body.proto-ui .lesson-card:hover .lesson-image {
+  transform: scale(1.06) !important;
+  filter: saturate(0.94) brightness(0.74) blur(1.6px) !important;
+}
+
+body.proto-ui .lesson-card[data-random-game="true"] .lesson-title-wrap,
+body.proto-ui .lesson-card[data-random-game="true"]:hover .lesson-title-wrap {
+  top: 50% !important;
+  bottom: auto !important;
+  transform: translateY(-50%) !important;
+}
+
+body.proto-ui .lesson-card[data-random-game="true"] .lesson-image,
+body.proto-ui .lesson-card[data-random-game="true"]:hover .lesson-image {
+  transform: scale(1.04) !important;
+  filter: blur(1.4px) saturate(0.9) brightness(0.76) !important;
+}
+
+body.proto-ui .lessons-toolbar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 18px !important;
+  flex-wrap: wrap !important;
+  max-width: 980px !important;
+  margin: 0 auto 24px !important;
+}
+
+body.proto-ui .sorter-wrapper {
+  flex: 0 1 340px !important;
+  max-width: 340px !important;
+  margin: 0 !important;
+}
+
+body.proto-ui .search-container,
+body.proto-ui .sorter-wrapper {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body.proto-ui .search-box,
+body.proto-ui .sort-select {
+  background: #10141a !important;
+  border: 1px solid rgba(var(--primary-orange-rgb), 0.34) !important;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.24) !important;
+}
+
+body.proto-ui .lesson-density-controls {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 8px 10px !important;
+  background: #10141a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 999px !important;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22) !important;
+}
+
+body.proto-ui .lesson-density-label {
+  color: rgba(255, 255, 255, 0.66) !important;
+  font-size: 0.74rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+}
+
+body.proto-ui .lesson-density-buttons {
+  display: inline-flex !important;
+  gap: 8px !important;
+}
+
+body.proto-ui .lesson-density-btn {
+  min-width: 40px !important;
+  height: 36px !important;
+  padding: 0 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 999px !important;
+  background: #0b0e12 !important;
+  color: rgba(255, 255, 255, 0.72) !important;
+  font-family: 'Courier New', monospace !important;
+  font-weight: 700 !important;
+}
+
+body.proto-ui .lesson-density-btn:hover,
+body.proto-ui .lesson-density-btn.active {
+  background: rgba(var(--primary-orange-rgb), 0.18) !important;
+  border-color: rgba(var(--primary-orange-rgb), 0.42) !important;
+  color: #ffffff !important;
+}
+
+body.proto-ui #allLessonsGrid {
+  gap: 18px !important;
+  width: min(100%, calc(100vw - 120px)) !important;
+  max-width: 1440px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body.proto-ui #allLessonsGrid[data-columns="3"] {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  max-width: 1440px !important;
+}
+
+body.proto-ui #allLessonsGrid[data-columns="4"] {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  max-width: 1520px !important;
+}
+
+body.proto-ui #allLessonsGrid[data-columns="5"] {
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  max-width: 1600px !important;
+}
+
+body.proto-ui #account-section,
+body.proto-ui #admin-section,
+body.proto-ui #settings-section {
+  max-width: 1320px !important;
+  margin: 0 auto 42px !important;
+  padding: 24px 30px !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+body.proto-ui #account-section .account-shell,
+body.proto-ui #admin-section .admin-shell {
+  max-width: 1240px !important;
+  margin: 0 auto !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body.proto-ui #account-section .modal-content,
+body.proto-ui #admin-section .modal-content {
+  background: #0b0d10 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34) !important;
+  overflow: hidden !important;
+}
+
+body.proto-ui #account-section .account-grid,
+body.proto-ui #admin-section .admin-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+  gap: 18px !important;
+  max-width: 1120px !important;
+  margin: 0 auto !important;
+  align-items: stretch !important;
+}
+
+body.proto-ui #account-section .setting-item,
+body.proto-ui #admin-section .admin-card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  min-height: 100% !important;
+}
+
+body.proto-ui #accountAuthCard {
+  grid-column: 1 / -1 !important;
+  max-width: 780px !important;
+  width: 100% !important;
+  justify-self: center !important;
+}
+
+body.proto-ui #settings-section .settings-panel {
+  display: flex !important;
+  gap: 20px !important;
+  align-items: flex-start !important;
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+body.proto-ui #settings-section .settings-nav {
+  width: 220px !important;
+  flex-shrink: 0 !important;
+  background: #0b0d10 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 24px !important;
+  padding: 10px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  position: sticky !important;
+  top: 88px !important;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.28) !important;
+}
+
+body.proto-ui #settings-section .settings-nav-icon {
+  display: inline-flex !important;
+}
+
+body.proto-ui #settings-section .settings-nav-btn {
+  width: 100% !important;
+  min-width: 0 !important;
+  justify-content: flex-start !important;
+  gap: 12px !important;
+  padding: 12px 14px !important;
+  border: 0 !important;
+  border-radius: 14px !important;
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.proto-ui #settings-section .settings-nav-btn.active {
+  background: rgba(var(--primary-orange-rgb), 0.16) !important;
+  color: #ffffff !important;
+  box-shadow: inset 0 0 0 1px rgba(var(--primary-orange-rgb), 0.28) !important;
+}
+
+body.proto-ui #settings-section .settings-content {
+  flex: 1 !important;
+  min-width: 0 !important;
+  max-width: none !important;
+}
+
+body.proto-ui #settings-section .settings-pane {
+  display: none !important;
+  gap: 16px !important;
+}
+
+body.proto-ui #settings-section .settings-pane.active {
+  display: flex !important;
+}
+
+body.proto-ui #settings-section .settings-card {
+  background: #0b0d10 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.3) !important;
+  overflow: hidden !important;
+}
+
+body.proto-ui #settings-section .settings-card-label {
+  padding: 14px 18px 10px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  color: rgba(255, 255, 255, 0.58) !important;
+}
+
+body.proto-ui #settings-section .settings-row {
+  background: #0b0d10 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+body.proto-ui #settings-section .settings-row:last-child {
+  border-bottom: 0 !important;
+}
+
+body.proto-ui #settings-section .settings-row:hover {
+  background: #10141a !important;
+}
+
+body.proto-ui #settings-section .settings-select,
+body.proto-ui #settings-section .settings-text-input,
+body.proto-ui #settings-section .settings-color-hex {
+  background: #12161d !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+body.proto-ui #settings-section #bgControlsPanel,
+body.proto-ui #settings-section .bg-controls-panel {
+  display: none !important;
+}
+
+body.proto-ui .section-banner-ad {
+  width: min(100%, 1120px) !important;
+  margin: 0 auto 18px !important;
+}
+
+body.proto-ui .section-banner-ad-bottom {
+  margin-top: 18px !important;
+  margin-bottom: 0 !important;
+}
+
+body.proto-ui .game-toolbar .btn i,
+body.proto-ui .game-toolbar .btn svg,
+body.proto-ui .game-toolbar .btn .fas,
+body.proto-ui .game-toolbar .btn .far,
+body.proto-ui .game-toolbar .btn .fab {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+@media (max-width: 1260px) {
+  body.proto-ui #allLessonsGrid[data-columns="5"] {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+
+  body.proto-ui #settings-section .settings-panel {
+    flex-direction: column !important;
+  }
+
+  body.proto-ui #settings-section .settings-nav {
+    width: 100% !important;
+    position: static !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+  }
+
+  body.proto-ui #settings-section .settings-nav-btn {
+    width: auto !important;
+    flex: 1 1 calc(50% - 6px) !important;
+  }
+}
+
+@media (max-width: 1080px) {
+  body.proto-ui #allLessonsGrid,
+  body.proto-ui #allLessonsGrid[data-columns="4"],
+  body.proto-ui #allLessonsGrid[data-columns="5"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    width: min(100%, calc(100vw - 48px)) !important;
+  }
+}
+
+@media (max-width: 700px) {
+  body.proto-ui #home-section,
+  body.proto-ui #all-lessons,
+  body.proto-ui #account-section,
+  body.proto-ui #admin-section,
+  body.proto-ui #settings-section {
+    padding: 18px 14px !important;
+  }
+
+  body.proto-ui .lessons-toolbar {
+    gap: 12px !important;
+  }
+
+  body.proto-ui .sorter-wrapper,
+  body.proto-ui .lesson-density-controls {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body.proto-ui .lesson-density-controls {
+    justify-content: space-between !important;
+  }
+
+  body.proto-ui #allLessonsGrid,
+  body.proto-ui #allLessonsGrid[data-columns="3"],
+  body.proto-ui #allLessonsGrid[data-columns="4"],
+  body.proto-ui #allLessonsGrid[data-columns="5"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+  }
+}
+
+body.proto-ui .btn i,
+body.proto-ui .btn svg,
+body.proto-ui .apply-btn i,
+body.proto-ui .apply-btn svg,
+body.proto-ui .file-btn i,
+body.proto-ui .file-btn svg,
+body.proto-ui .tab-info-copy-btn i,
+body.proto-ui .tab-info-copy-btn svg,
+body.proto-ui .settings-btn i,
+body.proto-ui .settings-btn svg,
+body.proto-ui .community-btn i,
+body.proto-ui .community-btn svg,
+body.proto-ui .chat-composer-chip-clear i,
+body.proto-ui .chat-composer-chip-clear svg {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+body.proto-ui #settings-section .settings-nav-icon,
+body.proto-ui #settings-section .settings-row-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+body.proto-ui .lessons-toolbar {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) !important;
+  align-items: center !important;
+  width: min(100%, 980px) !important;
+  max-width: 980px !important;
+  margin: 0 auto 24px !important;
+  column-gap: 18px !important;
+  row-gap: 18px !important;
+}
+
+body.proto-ui .sorter-wrapper {
+  grid-column: 2 !important;
+  justify-self: center !important;
+  width: min(340px, 100%) !important;
+  max-width: 340px !important;
+  margin: 0 !important;
+}
+
+body.proto-ui .lesson-density-controls {
+  grid-column: 3 !important;
+  justify-self: end !important;
+  margin-left: 0 !important;
+}
+
+body.proto-ui .file-input {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+}
+
+body.proto-ui .file-upload-container,
+body.proto-ui .account-avatar-actions {
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body.proto-ui #accountAuthCard[hidden],
+body.proto-ui #accountProfileCard[hidden],
+body.proto-ui #accountStatusCard[hidden],
+body.proto-ui #accountUsernameCard[hidden],
+body.proto-ui #accountPasswordCard[hidden],
+body.proto-ui #accountDangerCard[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  body.proto-ui .lessons-toolbar {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  body.proto-ui .sorter-wrapper,
+  body.proto-ui .lesson-density-controls {
+    grid-column: auto !important;
+    justify-self: center !important;
+    width: min(100%, 340px) !important;
+    max-width: 100% !important;
+  }
+}
