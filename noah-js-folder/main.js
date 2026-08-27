@@ -231,19 +231,27 @@ async function downloadCurrentGame() {
     try {
         let content = '';
         const fetchContent = async (url) => {
+            let lastError = null;
             try {
                 const response = await fetch(url);
                 if (response.ok) return await response.text();
-            } catch (e) {
-                console.warn('Local fetch failed, trying fallback...', e);
+                lastError = new Error(`Request for ${url} failed with status ${response.status}`);
+            } catch (error) {
+                lastError = error;
             }
+            console.warn('Local fetch failed, trying fallback...', lastError);
             if (!url.startsWith('http')) {
                 const baseUrl = 'https://raw.githubusercontent.com/NoahsAmazingTutoringHelp/Noahs-Calculus-Tutor/refs/heads/master/';
                 const fallbackUrl = baseUrl + url.replace(/^\/+/, '');
-                const fallbackResponse = await fetch(fallbackUrl);
-                if (fallbackResponse.ok) return await fallbackResponse.text();
+                try {
+                    const fallbackResponse = await fetch(fallbackUrl);
+                    if (fallbackResponse.ok) return await fallbackResponse.text();
+                    lastError = new Error(`Fallback request for ${fallbackUrl} failed with status ${fallbackResponse.status}`);
+                } catch (error) {
+                    lastError = error;
+                }
             }
-            throw new Error('Network response was not ok');
+            throw new Error(`Unable to fetch game source from ${url}`, { cause: lastError });
         };
 
         if (sourceUrl && currentSrcDoc && currentSrcDoc.includes('<!DOCTYPE')) {
@@ -2869,7 +2877,13 @@ function handleLogoUpload(event) {
         previewImg.style.display = 'block';
         logoPreview.querySelector('i').style.display = 'none';
         setSiteLogos(logoData);
-        localStorage.setItem('customLogo', logoData);
+        try {
+            localStorage.setItem('customLogo', logoData);
+        }
+        catch (error) {
+            console.error('Unable to store the custom logo:', error);
+            alert('That image is too large to save. It will be used until you reload the page.');
+        }
         const fileBtn = event.target.parentElement;
         const originalHTML = fileBtn.innerHTML;
         fileBtn.innerHTML = '<i class="fas fa-check"><\/i> Logo Uploaded!';
@@ -2880,6 +2894,10 @@ function handleLogoUpload(event) {
             fileBtn.style.borderColor = '';
             fileBtn.style.background = '';
         }, 1500);
+    };
+    reader.onerror = function () {
+        console.error('Unable to read the selected logo file:', reader.error);
+        alert('Unable to read that image file. Try a different one.');
     };
     reader.readAsDataURL(file);
 }
@@ -2982,9 +3000,12 @@ function tintLogoElementExact(logoEl, r, g, b) {
             }
         }
         catch (error) {
+            console.warn('Logo tinting failed, keeping the untinted logo:', error);
         }
     };
-    img.onerror = () => { };
+    img.onerror = () => {
+        console.warn('Logo image failed to load, keeping the untinted logo:', baseSrc);
+    };
     img.src = baseSrc;
 }
 function syncLogoThemeTone() {
@@ -3168,11 +3189,13 @@ function destroyActiveGameSession() {
             activeTab.frame.src = 'about:blank';
         }
         catch (error) {
+            console.warn('Unable to reset the game frame source:', error);
         }
         try {
             activeTab.frame.remove();
         }
         catch (error) {
+            console.warn('Unable to remove the game frame:', error);
         }
     }
     if (shell.views) {
@@ -3225,6 +3248,7 @@ function pauseMediaInFrame(frame, reset = false) {
         });
     }
     catch (error) {
+        console.debug('Unable to pause media inside the game frame (likely cross-origin):', error);
     }
 }
 function getGameFreezeHarnessScript() {
@@ -3466,6 +3490,7 @@ function postTabFreezeMessage(tab, frozen) {
         }
     }
     catch (error) {
+        console.debug('Unable to post the freeze state to the game frame:', error);
     }
     tab.frozen = frozen;
 }
@@ -3996,7 +4021,8 @@ function openSiteInAboutBlank() {
         try {
             window.close();
         }
-        catch (e) {
+        catch (error) {
+            console.warn('Unable to close the original window:', error);
         }
     }
     else {
@@ -4607,7 +4633,17 @@ function toggleAds(disabled) {
         setTimeout(() => location.reload(), 500);
     }
 }
-let favorites = JSON.parse(localStorage.getItem('gameFavorites')) || [];
+function readStoredFavorites() {
+    try {
+        const stored = JSON.parse(localStorage.getItem('gameFavorites') || '[]');
+        return Array.isArray(stored) ? stored : [];
+    }
+    catch (error) {
+        console.warn('Stored favorites are corrupt and were ignored:', error);
+        return [];
+    }
+}
+let favorites = readStoredFavorites();
 function updateGameDisplay(games) {
     const container = document.getElementById('allLessonsGrid');
     if (!container)

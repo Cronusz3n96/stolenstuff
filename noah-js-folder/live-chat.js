@@ -672,6 +672,7 @@
         day: 'numeric'
       }).format(new Date(isoValue));
     } catch (error) {
+      console.warn('Live chat: unable to format timestamp', isoValue, error);
       return '';
     }
   }
@@ -687,6 +688,7 @@
         minute: '2-digit'
       }).format(new Date(isoValue));
     } catch (error) {
+      console.warn('Live chat: unable to format timestamp', isoValue, error);
       return '';
     }
   }
@@ -1351,6 +1353,7 @@
     try {
       localStorage.removeItem('noahsAccountLock');
     } catch (error) {
+      console.warn('Live chat: unable to clear the stored account lock', error);
     }
     exposeAccountLockState();
   }
@@ -1400,6 +1403,7 @@
     try {
       localStorage.setItem('noahsAccountLock', JSON.stringify(state.accountLock));
     } catch (error) {
+      console.warn('Live chat: unable to persist the account lock', error);
     }
     exposeAccountLockState();
   }
@@ -1412,6 +1416,7 @@
         markAccountLocked(stored.reason || 'locked', stored.detail || '', stored.until || null);
       }
     } catch (error) {
+      console.warn('Live chat: unable to restore the stored account lock', error);
     }
   }
 
@@ -1425,6 +1430,7 @@
       try {
         state.activeAudio.pause();
       } catch (error) {
+        console.warn('Live chat: unable to pause the active sound', error);
       }
       state.activeAudio = null;
     }
@@ -1442,7 +1448,8 @@
     audio.loop = !!settings.loop;
     state.activeAudio = audio;
 
-    audio.play().catch(function () {
+    audio.play().catch(function (error) {
+      console.warn('Live chat: unable to play the admin sound', error);
       state.activeAudio = null;
     });
 
@@ -1498,9 +1505,12 @@
       try {
         const result = exitFullscreen.call(document);
         if (result && typeof result.catch === 'function') {
-          result.catch(function () { });
+          result.catch(function (error) {
+            console.warn('Live chat: unable to exit fullscreen', error);
+          });
         }
       } catch (error) {
+        console.warn('Live chat: unable to exit fullscreen', error);
       }
     }
   }
@@ -3507,6 +3517,7 @@
       try {
         applySiteState(await api('/api/site/state', 'GET'));
       } catch (error) {
+        console.warn('Live chat: unable to refresh the site state', error);
       } finally {
         state.siteStateRequest = null;
       }
@@ -3710,7 +3721,10 @@
         state.adminReports = Array.isArray(response.reports) ? response.reports : [];
         renderAdminReports();
       } catch (error) {
-        state.adminReports = [];
+        console.warn('Live chat: unable to load admin reports', error);
+        if (!Array.isArray(state.adminReports) || !state.adminReports.length) {
+          setFeedback(getElements().adminFeedback, 'error', extractErrorMessage(error, 'Unable to load reports.'));
+        }
         renderAdminReports();
       } finally {
         state.adminReportsRequest = null;
@@ -4320,6 +4334,8 @@
         '/api/admin/mod-list'
       ];
 
+      let lastError = null;
+
       for (let i = 0; i < endpoints.length; i += 1) {
         try {
           const response = await api(endpoints[i], 'GET');
@@ -4329,7 +4345,12 @@
             return normalized;
           }
         } catch (error) {
+          lastError = error;
         }
+      }
+
+      if (lastError) {
+        console.warn('Live chat: unable to load the staff directory, using the local fallback', lastError);
       }
 
       setModsDirectory(localFallback);
@@ -5967,7 +5988,8 @@
         }
 
         return null;
-      }).catch(function () {
+      }).catch(function (error) {
+        console.warn('Live chat: unable to refresh after switching tabs', error);
       });
     });
 
@@ -5997,7 +6019,8 @@
         }
 
         return null;
-      }).catch(function () {
+      }).catch(function (error) {
+        console.warn('Live chat: unable to refresh after the page became visible', error);
       });
     });
   }
@@ -6048,5 +6071,7 @@
   bindAdminEvents();
   bindModalEvents();
   bindGlobalEvents();
-  initialize();
+  initialize().catch(function (error) {
+    console.error('Live chat: initialization failed', error);
+  });
 })();

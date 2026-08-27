@@ -58,6 +58,7 @@
         return clientId;
       }
     } catch (error) {
+      console.warn('Online counter: unable to read the stored client id', error);
     }
 
     const generatedValue = typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function'
@@ -69,6 +70,7 @@
     try {
       window.localStorage.setItem(CLIENT_ID_STORAGE_KEY, clientId);
     } catch (error) {
+      console.warn('Online counter: unable to persist the client id', error);
     }
 
     return clientId;
@@ -89,7 +91,7 @@
         });
 
         if (!response.ok) {
-          throw new Error('Snapshot request failed.');
+          throw new Error('Presence snapshot request failed with status ' + response.status);
         }
 
         const snapshot = await response.json();
@@ -97,6 +99,7 @@
           applyPresenceCount(snapshot.count, 'live users');
         }
       } catch (error) {
+        console.warn('Online counter: unable to refresh the presence snapshot', error);
         if (lastKnownCount === null) {
           setCounterState('syncing', null, 'syncing');
         } else {
