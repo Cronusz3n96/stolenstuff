@@ -1,9 +1,5 @@
 (function () {
-  const CHAT_API_ORIGIN = typeof window !== 'undefined' && typeof window.__CHAT_API_ORIGIN__ === 'string' && window.__CHAT_API_ORIGIN__
-    ? window.__CHAT_API_ORIGIN__.replace(/\/+$/, '')
-    : ((window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') && window.location.port !== '8090'
-      ? 'http://127.0.0.1:8090'
-      : window.location.origin);
+  const CHAT_API_ORIGIN = window.NoahShared.getApiOrigin();
   const SNAPSHOT_PATH = CHAT_API_ORIGIN + '/api/live/presence';
   const REFRESH_MS = 30000;
   const CLIENT_ID_STORAGE_KEY = 'sitePresenceClientId';
@@ -51,13 +47,10 @@
       return clientId;
     }
 
-    try {
-      const storedValue = window.localStorage.getItem(CLIENT_ID_STORAGE_KEY);
-      if (storedValue) {
-        clientId = storedValue;
-        return clientId;
-      }
-    } catch (error) {
+    const storedValue = NoahShared.readStoredSetting(CLIENT_ID_STORAGE_KEY);
+    if (storedValue) {
+      clientId = storedValue;
+      return clientId;
     }
 
     const generatedValue = typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function'
@@ -66,10 +59,7 @@
 
     clientId = generatedValue;
 
-    try {
-      window.localStorage.setItem(CLIENT_ID_STORAGE_KEY, clientId);
-    } catch (error) {
-    }
+    NoahShared.writeSetting(CLIENT_ID_STORAGE_KEY, clientId);
 
     return clientId;
   }
